@@ -1,0 +1,17 @@
+https://rickandmortyapi.com/
+
+https://developer.valvesoftware.com/wiki/Steam_Web_API
+
+https://apidocs.cheapshark.com/
+
+https://www.themealdb.com/api.php
+
+https://developer.edamam.com/edamam-docs-recipe-api
+
+https://www.alphavantage.co/
+
+https://www.iqair.com/air-pollution-data-api
+
+https://www.exchangerate-api.com/
+
+https://open.canada.ca/en
