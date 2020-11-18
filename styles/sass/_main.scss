@@ -1,0 +1,20 @@
+form {
+  display: flex;
+  flex-direction: column;
+  div {
+    display: flex;
+  }
+
+  fieldset {
+    width: 50%;
+  }
+}
+
+.resultsSection {
+  display: flex;
+
+  .mealInfo,
+  .drinkInfo {
+    width: 50%;
+  }
+}
