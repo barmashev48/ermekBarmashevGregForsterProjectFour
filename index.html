@@ -12,10 +12,10 @@
     <main>
       <section class="mealInput">
         <h2>Customize your meal:</h2>
-        <form action="">
+        <form action="" class="mealForm">
           <!-- category -->
           <fieldset class="categoryMeal">
-            <button class="categoryMealButton" value="Beef">Beef</button>
+            <!-- <button class="categoryMealButton" value="Beef">Beef</button>
             <button class="categoryMealButton" value="Breakfast">Breakfast</button>
             <button class="categoryMealButton" value="Chicken">Chicken</button>
             <button class="categoryMealButton" value="">Dessert</button>
@@ -28,11 +28,22 @@
             <button class="categoryMealButton" value="">Side</button>
             <button class="categoryMealButton" value="">Starter</button>
             <button class="categoryMealButton" value="">Vegan</button>
-            <button class="categoryMealButton" value="">Vegetarian</button>
+            <button class="categoryMealButton" value="">Vegetarian</button> -->
+            <label class="categoryMealButton">Beef
+                <input type="radio" name="categoryMeal" value="Beef">
+            </label>
+            <label class="categoryMealButton">Breakfast
+                <input type="radio" name="categoryMeal" value="Breakfast">
+            </label>
+            <label class="categoryMealButton">Chicken
+                <input type="radio" name="categoryMeal" value="Chicken">
+            </label>
+            
+
           </fieldset>
           <!-- location -->
           <fieldset class="areaMeal">
-            <button class="areaMealButton">American</button>
+            <!-- <button class="areaMealButton">American</button>
             <button class="areaMealButton">Canadian</button>
             <button class="areaMealButton">Chinese</button>
             <button class="areaMealButton">Dutch</button>
@@ -46,7 +57,7 @@
             <button class="areaMealButton">Japanese</button>
             <button class="areaMealButton">Kenyan</button>
             <button class="areaMealButton">Malaysian</button>
-            <button class="areaMealButton">Mexican</button>
+            <button class="areaMealButton" value="Mexican">Mexican</button>
             <button class="areaMealButton">Moroccan</button>
             <button class="areaMealButton">Polish</button>
             <button class="areaMealButton">Russian</button>
@@ -55,14 +66,50 @@
             <button class="areaMealButton">Tunisian</button>
             <button class="areaMealButton">Turkish</button>
             <button class="areaMealButton">Unknown</button>
-            <button class="areaMealButton">Vietnamese</button>
+            <button class="areaMealButton">Vietnamese</button> -->
+            <label class="areaMeal">American
+                <input type="radio" name="areaMeal" value="American">
+            </label>
+            <label class="areaMeal">British
+                <input type="radio" name="areaMeal" value="British">
+            </label>
+            <label class="areaMeal">Chinese
+                <input type="radio" name="areaMeal" value="Chinese">
+            </label>
+
           </fieldset>
-          <button>Submit</button>
+          <label for="userIngredients">What ingredients would you like to include in your meal?</label>
+          <input type="text" class="userIngredients" id="userIngredients">
+          <button type="submit">Submit</button>
         </form>
       </section>
-      <section class="drinkInput"></section>
+      <section class="drinkInput">
+          <form action>
+            <!-- user determines alcohol content in drink -->
+            <fieldset>
+                <button class="alcoholContent">Alcoholic</button>
+                <button class="alcoholContent">Non-alcoholic</button>
+                <button class="alcoholContent">Both</button>
+            </fieldset>
+            <!-- user determines drink category -->
+            <fieldset>
+                <button class="drinkCategoryButton">Ordinary Drink</button>
+                <button class="drinkCategoryButton">Cocktail</button>
+                <button class="drinkCategoryButton">Milk / Float / Shake</button>
+                <button class="drinkCategoryButton">Other</button>
+                <button class="drinkCategoryButton">Cocoa</button>
+                <button class="drinkCategoryButton">Shot</button>
+                <button class="drinkCategoryButton">Coffee / Tea</button>
+                <button class="drinkCategoryButton">Homemade Liquer</button>
+                <button class="drinkCategoryButton">Punch / Party Drink</button>
+                <button class="drinkCategoryButton">Beer</button>
+                <button class="drinkCategoryButton">Soft Drink / Soda</button>
+            </fieldset>
+          </form>
+      </section>
       <section class="resultsSection">
-        <div class="recipe"></div>
+        <div class="drinks"></div>
+        <div class="meals"></div>
       </section>
     </main>
     <footer></footer>
