@@ -3,18 +3,22 @@ const app = {};
 app.init = function () {};
 
 app.mealFilterUrl = "https://www.themealdb.com/api/json/v1/1/filter.php";
-app.mealSearchUrl = "https://www.themealdb.com/api/json/v1/1/search.php?";
+app.mealSearchUrl = "https://www.themealdb.com/api/json/v1/1/search.php";
+app.drinkFilterUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php";
+app.drinkSearchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php";
 
-app.categoryMealChoice = function (e) {
+app.categoryChoice = function (e) {
   e.preventDefault();
-  const categoryName = $('input[name=categoryMeal]:checked').val();
-  
-  app.ajaxCall(categoryName);
+  const categoryMeal = $('input[name=categoryMeal]:checked').val();
+  const categoryDrink = $('input[name=categoryDrink]:checked').val();
+
+  app.ajaxCall(categoryDrink, app.drinkFilterUrl);
+  app.ajaxCall(categoryMeal, app.mealFilterUrl);
 };
 
-app.ajaxCall = function (category) {
+app.ajaxCall = function (category, url) {
   $.ajax({
-    url: this.mealFilterUrl,
+    url: url,
     method: "GET",
     dataType: "json",
     data: {
@@ -22,36 +26,64 @@ app.ajaxCall = function (category) {
     },
   })
   .then(function(res){
-    const mealName = res.meals[app.getRandomIndex(res.meals.length)].strMeal;
-
-  $.ajax({
-    url:app.mealSearchUrl,
-    method:"GET",
-    dataType:"json",
-      data: {
-        s:mealName
-      }
+    console.log(res);
+    if (res.meals) {
+      const mealName = res.meals[app.getRandomIndex(res.meals.length)].strMeal;
+      console.log(mealName);
+      app.searchRecipe(app.mealSearchUrl, mealName, "meals");
+    } else {
+      const drinkName = res.drinks[app.getRandomIndex(res.drinks.length)].strDrink;
+      app.searchRecipe(app.drinkSearchUrl, drinkName, "drinks");
+    }
   })
-  .then(function(res){
-    app.displayRecipe(res.meals[0]);
-    console.log(res.meals[0])
-  })
-})
 }
 
-app.displayRecipe = function({strMeal, strCategory, strArea, strInstructions, strMealThumb, strYoutube}){
+app.searchRecipe = function (url, name, type) {
+  $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: {
+      s: name
+    }
+  })
+    .then(function (res) {
+      console.log(res[type][0]);
+      if (type === "meals") {
+        app.displayMeal(res[type][0]);
+      } else {
+        app.displayDrink(res[type][0]);
+      }
+    })
+}
+
+app.displayMeal = function({strMeal, strCategory, strArea, strInstructions, strMealThumb, strYoutube}){
   recipeHtml = `
-          <div class="displayedRecipe">
-            <h2>${strMeal}</h2>
-            <h3>${strArea}</h3>
-            <p class="category">${strCategory}</p>
-            <img src="${strMealThumb}" alt="${strMeal}">
-            <p class="instructions">${strInstructions}</p>
-            <a href="">${strYoutube}</a>
-          </div>
+    <div class="displayedRecipe">
+      <h2>${strMeal}</h2>
+      <h3>${strArea}</h3>
+      <p class="category">${strCategory}</p>
+      <img src="${strMealThumb}" alt="${strMeal}">
+      <p class="instructions">${strInstructions}</p>
+      <a href="">${strYoutube}</a>
+    </div>
   `;
 
   $('.resultsSection .meal').html(recipeHtml);
+}
+
+app.displayDrink = function({strDrink, strAlcoholic, strCategory, strInstructions, strDrinkThumb}) {
+  recipeHtml = `
+    <div class="displayedRecipe">
+      <h2>${strDrink}</h2>
+      <h3>${strAlcoholic}</h3>
+      <p class="category">${strCategory}</p>
+      <img src="${strDrinkThumb}" alt="${strDrink}">
+      <p class="instructions">${strInstructions}</p>
+    </div>
+  `
+
+  $('.resultsSection .drink').html(recipeHtml);
 }
 
 app.getRandomIndex = function(arrayLength){
@@ -59,8 +91,9 @@ app.getRandomIndex = function(arrayLength){
 }
 
 app.eventListeners = function () {
-  $(".mealForm").on("submit", app.categoryMealChoice);
+  $("form").on("submit", app.categoryChoice);
 };
+
 
 $(function () {
   app.init();

@@ -10,9 +10,9 @@
       <h1>Meal Combination</h1>
     </header>
     <main>
-      <section class="mealInput">
-        <h2>Customize your meal:</h2>
-        <form action="" class="mealForm">
+      <form action="" class="inputForm"></form>
+        <!-- <section class="mealInput"> -->
+          <h2>Customize your meal:</h2>
           <!-- category -->
           <fieldset class="categoryMeal">
             <!-- <button class="categoryMealButton" value="Beef">Beef</button>
@@ -29,39 +29,45 @@
             <button class="categoryMealButton" value="">Starter</button>
             <button class="categoryMealButton" value="">Vegan</button>
             <button class="categoryMealButton" value="">Vegetarian</button> -->
-            <label class="categoryMealButton">Beef
+            <label class="categoryMeal">Beef
                 <input type="radio" name="categoryMeal" value="Beef">
             </label>
-            <label class="categoryMealButton">Breakfast
+            <label class="categoryMeal">Breakfast
                 <input type="radio" name="categoryMeal" value="Breakfast">
             </label>
-            <label class="categoryMealButton">Chicken
+            <label class="categoryMeal">Chicken
                 <input type="radio" name="categoryMeal" value="Chicken">
             </label>
             
           </fieldset>
-          <button type="submit">Submit</button>
-          
-        </form>
-      </section>
-      <section class="drinkInput">
-          <form action>
-            <!-- user determines drink category -->
-            <fieldset>
-                <button class="drinkCategoryButton">Ordinary Drink</button>
-                <button class="drinkCategoryButton">Cocktail</button>
-                <button class="drinkCategoryButton">Milk / Float / Shake</button>
-                <button class="drinkCategoryButton">Other</button>
-                <button class="drinkCategoryButton">Cocoa</button>
-                <button class="drinkCategoryButton">Shot</button>
-                <button class="drinkCategoryButton">Coffee / Tea</button>
-                <button class="drinkCategoryButton">Homemade Liquer</button>
-                <button class="drinkCategoryButton">Punch / Party Drink</button>
-                <button class="drinkCategoryButton">Beer</button>
-                <button class="drinkCategoryButton">Soft Drink / Soda</button>
-            </fieldset>
-          </form>
-      </section>
+        <!-- </section> -->
+        <!-- <section class="drinkInput"> -->
+          <!-- user determines drink category -->
+          <fieldset>
+            <!-- <button class="drinkCategoryButton">Ordinary Drink</button>
+            <button class="drinkCategoryButton">Cocktail</button>
+            <button class="drinkCategoryButton">Milk / Float / Shake</button>
+            <button class="drinkCategoryButton">Other</button>
+            <button class="drinkCategoryButton">Cocoa</button>
+            <button class="drinkCategoryButton">Shot</button>
+            <button class="drinkCategoryButton">Coffee / Tea</button>
+            <button class="drinkCategoryButton">Homemade Liquer</button>
+            <button class="drinkCategoryButton">Punch / Party Drink</button>
+            <button class="drinkCategoryButton">Beer</button>
+            <button class="drinkCategoryButton">Soft Drink / Soda</button> -->
+            <label class="categoryDrink">Ordinary Drink
+              <input type="radio" name="categoryDrink" value="Ordinary Drink">
+            </label>
+            <label class="drinkCategory">Cocktail
+              <input type="radio" name="categoryDrink" value="Cocktail">
+            </label>
+            <label class="drinkCategory">Milkshake / Float
+              <input type="radio" name="categoryDrink" value="Milk / Float / Shake">
+            </label>
+          </fieldset>
+        <!-- </section> -->
+        <button type="submit">Submit</button>
+      </form>
       <section class="resultsSection">
         <div class="meal"></div>
         <div class="drink"></div>
