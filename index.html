@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Meal Combination</h1>
+      <h1>Meal Combination</h1>
     </header>
     <main>
-        <section class="mealInput">
-            <h2>Customize your meal:</h2>
-            <form action="">
-                <!-- category -->
-                <div>
-                    <button class="categoryMeal">Beef</button>
-                    <button class="categoryMeal">Breakfast</button>
-                    <button class="categoryMeal">Chicken</button>
-                    <button class="categoryMeal">Dessert</button>
-                    <button class="categoryMeal">Goat</button>
-                    <button class="categoryMeal">Lamb</button>
-                    <button class="categoryMeal">Miscellaneous</button>
-                    <button class="categoryMeal">Pasta</button>
-                    <button class="categoryMeal">Pork</button>
-                    <button class="categoryMeal">Seafood</button>
-                    <button class="categoryMeal">Side</button>
-                    <button class="categoryMeal">Starter</button>
-                    <button class="categoryMeal">Vegan</button>
-                    <button class="categoryMeal">Vegetarian</button>
-                </div>
-                <!-- location -->
-
-            </form>
-        </section>
-        <section class="drinkInput">
-
-        </section>
+      <section class="mealInput">
+        <h2>Customize your meal:</h2>
+        <form action="">
+          <!-- category -->
+          <fieldset class="categoryMeal">
+            <button class="categoryMealButton" value="Beef">Beef</button>
+            <button class="categoryMealButton" value="Breakfast">Breakfast</button>
+            <button class="categoryMealButton" value="Chicken">Chicken</button>
+            <button class="categoryMealButton" value="">Dessert</button>
+            <button class="categoryMealButton" value="">Goat</button>
+            <button class="categoryMealButton" value="">Lamb</button>
+            <button class="categoryMealButton" value="">Miscellaneous</button>
+            <button class="categoryMealButton" value="">Pasta</button>
+            <button class="categoryMealButton" value="">Pork</button>
+            <button class="categoryMealButton" value="">Seafood</button>
+            <button class="categoryMealButton" value="">Side</button>
+            <button class="categoryMealButton" value="">Starter</button>
+            <button class="categoryMealButton" value="">Vegan</button>
+            <button class="categoryMealButton" value="">Vegetarian</button>
+          </fieldset>
+          <!-- location -->
+          <fieldset class="areaMeal">
+            <button class="areaMealButton">American</button>
+            <button class="areaMealButton">Canadian</button>
+            <button class="areaMealButton">Chinese</button>
+            <button class="areaMealButton">Dutch</button>
+            <button class="areaMealButton">Egyptian</button>
+            <button class="areaMealButton">French</button>
+            <button class="areaMealButton">Greek</button>
+            <button class="areaMealButton">Indian</button>
+            <button class="areaMealButton">Irish</button>
+            <button class="areaMealButton">Italian</button>
+            <button class="areaMealButton">Jamaican</button>
+            <button class="areaMealButton">Japanese</button>
+            <button class="areaMealButton">Kenyan</button>
+            <button class="areaMealButton">Malaysian</button>
+            <button class="areaMealButton">Mexican</button>
+            <button class="areaMealButton">Moroccan</button>
+            <button class="areaMealButton">Polish</button>
+            <button class="areaMealButton">Russian</button>
+            <button class="areaMealButton">Spanish</button>
+            <button class="areaMealButton">Thai</button>
+            <button class="areaMealButton">Tunisian</button>
+            <button class="areaMealButton">Turkish</button>
+            <button class="areaMealButton">Unknown</button>
+            <button class="areaMealButton">Vietnamese</button>
+          </fieldset>
+          <button>Submit</button>
+        </form>
+      </section>
+      <section class="drinkInput"></section>
+      <section class="resultsSection">
+        <div class="recipe"></div>
+      </section>
     </main>
     <footer></footer>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./scripts.js"></script>
+  </body>
 </html>
