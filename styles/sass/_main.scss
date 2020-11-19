@@ -1,0 +1,19 @@
+fieldset {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    // display: none;
+  }
+}
+.resultsSection {
+  display: flex;
+
+  .mealInfo,
+  .drinkInfo {
+    width: 50%;
+  }
+}

@@ -3,74 +3,144 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Document</title>
   </head>
   <body>
     <header>
       <h1>Meal Combination</h1>
     </header>
+
     <main>
-      <form action="" class="inputForm"></form>
-        <!-- <section class="mealInput"> -->
-          <h2>Customize your meal:</h2>
+      <form action="" class="inputForm">
           <!-- category -->
           <fieldset class="categoryMeal">
-            <!-- <button class="categoryMealButton" value="Beef">Beef</button>
-            <button class="categoryMealButton" value="Breakfast">Breakfast</button>
-            <button class="categoryMealButton" value="Chicken">Chicken</button>
-            <button class="categoryMealButton" value="">Dessert</button>
-            <button class="categoryMealButton" value="">Goat</button>
-            <button class="categoryMealButton" value="">Lamb</button>
-            <button class="categoryMealButton" value="">Miscellaneous</button>
-            <button class="categoryMealButton" value="">Pasta</button>
-            <button class="categoryMealButton" value="">Pork</button>
-            <button class="categoryMealButton" value="">Seafood</button>
-            <button class="categoryMealButton" value="">Side</button>
-            <button class="categoryMealButton" value="">Starter</button>
-            <button class="categoryMealButton" value="">Vegan</button>
-            <button class="categoryMealButton" value="">Vegetarian</button> -->
-            <label class="categoryMeal">Beef
-                <input type="radio" name="categoryMeal" value="Beef">
-            </label>
-            <label class="categoryMeal">Breakfast
-                <input type="radio" name="categoryMeal" value="Breakfast">
-            </label>
-            <label class="categoryMeal">Chicken
-                <input type="radio" name="categoryMeal" value="Chicken">
-            </label>
-            
+              <h2>Choose your meal category:</h2>
+
+              <div class="categoryChoiceWrapper">
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Beef" />
+                  <label class="mealCategoryLabel">Beef</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Breakfast" />
+                  <label class="mealCategoryLabel">Breakfast</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Chicken" />
+                  <label class="mealCategoryLabel">Chicken</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Dessert" />
+                  <label class="mealCategoryLabel">Dessert</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Goat" />
+                  <label class="mealCategoryLabel">Goat</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Lamb" />
+                  <label class="mealCategoryLabel">Lamb</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Miscellaneous" />
+                  <label class="mealCategoryLabel">Miscellaneous</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Pasta" />
+                  <label class="mealCategoryLabel">Pasta</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Pork" />
+                  <label class="mealCategoryLabel">Pork</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Seafood" />
+                  <label class="mealCategoryLabel">Seafood</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Side" />
+                  <label class="mealCategoryLabel">Side</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Starter" />
+                  <label class="mealCategoryLabel">Starter</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Vegan" />
+                  <label class="mealCategoryLabel">Vegan</label>
+                </div>
+                <div class="mealCategoryOption">
+                  <input type="radio" name="categoryMeal" value="Vegetarian" />
+                  <label class="mealCategoryLabel">Vegetarian</label>
+                </div>
+              </div>
+              <button>Go to drinks</button>
           </fieldset>
-        <!-- </section> -->
-        <!-- <section class="drinkInput"> -->
-          <!-- user determines drink category -->
+
           <fieldset>
-            <!-- <button class="drinkCategoryButton">Ordinary Drink</button>
-            <button class="drinkCategoryButton">Cocktail</button>
-            <button class="drinkCategoryButton">Milk / Float / Shake</button>
-            <button class="drinkCategoryButton">Other</button>
-            <button class="drinkCategoryButton">Cocoa</button>
-            <button class="drinkCategoryButton">Shot</button>
-            <button class="drinkCategoryButton">Coffee / Tea</button>
-            <button class="drinkCategoryButton">Homemade Liquer</button>
-            <button class="drinkCategoryButton">Punch / Party Drink</button>
-            <button class="drinkCategoryButton">Beer</button>
-            <button class="drinkCategoryButton">Soft Drink / Soda</button> -->
-            <label class="categoryDrink">Ordinary Drink
-              <input type="radio" name="categoryDrink" value="Ordinary Drink">
-            </label>
-            <label class="drinkCategory">Cocktail
-              <input type="radio" name="categoryDrink" value="Cocktail">
-            </label>
-            <label class="drinkCategory">Milkshake / Float
-              <input type="radio" name="categoryDrink" value="Milk / Float / Shake">
-            </label>
+
+            <h2>Choose your drink category</h2>
+            <div class="categoryChoiceWrapper">
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Ordinary Drink" />
+                  <label class="drinkCategoryLabel">Ordinary Drink</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Cocktail" />
+                  <label class="drinkCategoryLabel">Cocktail</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Milk / Float / Shake" />
+                  <label class="drinkCategoryLabel">Float / Shake</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Milk / Float / Shake" />
+                  <label class="drinkCategoryLabel">Float / Shake</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Other/Unknown" />
+                  <label class="drinkCategoryLabel">Other</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Cocoa" />
+                  <label class="drinkCategoryLabel">Cocoa</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Shot" />
+                  <label class="drinkCategoryLabel">Shot</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Coffee / Tea" />
+                  <label class="drinkCategoryLabel">Coffee / Tea</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Homemade Liqueur" />
+                  <label class="drinkCategoryLabel">Homemade Liqueur</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Punch / Party Drink" />
+                  <label class="drinkCategoryLabel">Punch / Party Drink</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Beer" />
+                  <label class="drinkCategoryLabel">Beer</label>
+              </div>
+              <div class="drinkCategoryOption">
+                  <input type="radio" name="categoryDrink" value="Soft Drink / Soda" />
+                  <label class="drinkCategoryLabel">Soft Drink / Soda</label>
+              </div>
+
+            </div>
+
+
           </fieldset>
-        <!-- </section> -->
-        <button type="submit">Submit</button>
+          <button type="submit">Submit</button>
+        </div>
       </form>
       <section class="resultsSection">
-        <div class="meal"></div>
-        <div class="drink"></div>
+        <div class="mealRecipe"></div>
+        <div class="drinkRecipe"></div>
       </section>
     </main>
     <footer></footer>
