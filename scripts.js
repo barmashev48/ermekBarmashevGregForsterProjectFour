@@ -86,10 +86,12 @@ app.displayDrink = function ({ strDrink, strAlcoholic, strCategory, strInstructi
   $(".drinkRecipe").html(drinkRecipeHtml);
 };
 
+//Get random number from 0 to arrayLength parameter
 app.getRandomIndex = function (arrayLength) {
   return Math.floor(Math.random() * arrayLength);
 };
 
+//All event listeners
 app.eventListeners = function () {
   $("form").on("submit", app.submitHandler);
 };
