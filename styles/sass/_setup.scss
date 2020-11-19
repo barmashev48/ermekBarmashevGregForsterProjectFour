@@ -221,3 +221,27 @@ html {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  // font-family: 'Trispace', sans-serif;
+  // background-color: $background;
+  // color: $text-on-dark;
+  line-height: 1.4;
+}
+header, section {
+  min-height: 100vh;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+fieldset {
+  border: 0;
+}

@@ -1,3 +1,21 @@
+main {
+  form {
+    .categoryChoiceWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      
+      .mealCategoryOption:nth-child(13) {
+        grid-column-start: col-start 2;
+      }
+      .mealCategoryOption:nth-child(14) {
+        grid-column-start: col-start 3;
+      }     
+    }
+  }
+}
+
+
+
 fieldset {
   height: 100vh;
   display: flex;
