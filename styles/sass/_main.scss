@@ -1,15 +1,14 @@
-form {
+fieldset {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  div {
-    display: flex;
-  }
+  justify-content: center;
+  align-items: center;
 
-  fieldset {
-    width: 50%;
+  input {
+    // display: none;
   }
 }
-
 .resultsSection {
   display: flex;
 

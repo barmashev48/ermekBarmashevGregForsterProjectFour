@@ -269,7 +269,8 @@ html {
   overflow: hidden;
 }
 
-form {
+fieldset {
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,16 +278,12 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-form div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-form fieldset {
-  width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .resultsSection {
@@ -298,4 +295,17 @@ form fieldset {
 .resultsSection .mealInfo,
 .resultsSection .drinkInfo {
   width: 50%;
+}
+
+header {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: flex;
+      -ms-flex-pack: flex;
+          justify-content: flex;
+  -webkit-box-align: flex;
+      -ms-flex-align: flex;
+          align-items: flex;
 }
