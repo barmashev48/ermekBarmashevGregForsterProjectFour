@@ -20,8 +20,8 @@ img {
   display: block;
 }
 a {
-  text-decoration: none;
   font-size: 2.4rem;
+  text-decoration: none;
 }
 fieldset {
   border: 0;
@@ -42,6 +42,7 @@ fieldset {
   background-size: 200% 100%;
   background-position: right bottom;
   transition: all 0.7s ease-in;
+  text-transform: uppercase;
 
   &:hover {
     background-position: left bottom;

@@ -16,10 +16,10 @@ header {
     }
 
     p {
-        margin: 20px 0;
+        margin: 20px 0; 
     };
 
-    
+
     .heading {
         position: relative;
         width: 100%;
@@ -31,15 +31,14 @@ header {
             line-height: 1.2; 
         }
 
-        
 
-        img {
-            position: absolute;
-            left: 190px;
-            top: 0px;
-            width: 100px;
-        }
+
+    img {
+        position: absolute;
+        left: 190px;
+        top: 0px;
+        width: 100px;
+    }
 
     }
-    
 }

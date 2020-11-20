@@ -25,8 +25,8 @@ img {
 }
 
 a {
-  text-decoration: none;
   font-size: 2.4rem;
+  text-decoration: none;
 }
 
 fieldset {
@@ -46,6 +46,7 @@ fieldset {
   background-position: right bottom;
   -webkit-transition: all 0.7s ease-in;
   transition: all 0.7s ease-in;
+  text-transform: uppercase;
 }
 
 .scrollButton:hover,
@@ -324,24 +325,7 @@ html {
   overflow: hidden;
 }
 
-main form .categoryChoiceWrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
-main form .categoryChoiceWrapper .mealCategoryOption:nth-child(13) {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-}
-
-main form .categoryChoiceWrapper .mealCategoryOption:nth-child(14) {
-  -ms-grid-column: 3;
-      grid-column-start: 3;
-}
-
-fieldset {
+main form fieldset {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -356,6 +340,44 @@ fieldset {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main form fieldset input {
+  display: none;
+}
+
+main form fieldset .categoryChoiceWrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+main form fieldset .categoryChoiceWrapper .mealCategoryOption {
+  padding: 20px 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #1A1A1D;
+  color: white;
+}
+
+main form fieldset .categoryChoiceWrapper .mealCategoryOption:hover {
+  background-color: #950740;
+}
+
+main form fieldset .categoryChoiceWrapper label {
+  cursor: pointer;
+}
+
+main form fieldset .categoryChoiceWrapper .mealCategoryOption:nth-child(13) {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+}
+
+main form fieldset .categoryChoiceWrapper .mealCategoryOption:nth-child(14) {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
 }
 
 .resultsSection {
