@@ -27,13 +27,19 @@ fieldset {
   border: 0;
 }
 
+h2 {
+  margin: 0 0 30px 0;
+  text-transform: uppercase;
+}
+
 .scrollButton,
 .submitButton {
   color: $lightBackground;
   border: 2px solid $accentAccent;
+  font-size: 3rem;
   border-radius: 10px;
   padding: 5px 20px;
-  margin: 0 auto;
+  margin: 30px auto;
   background: linear-gradient(
     to right,
     $accentAccent 50%,
@@ -47,4 +53,10 @@ fieldset {
   &:hover {
     background-position: left bottom;
   }
+}
+
+.submitButton {
+  background-color: $lightBackground;
+  color: $darkBackground;
+  cursor: pointer;
 }
