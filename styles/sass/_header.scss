@@ -4,24 +4,42 @@ header {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: $background;
+    background-color: $darkBackground;
     color: white;
 
-    h1 {
-        color: $accentAccent;
-        font-size: 8rem; 
+    .headerWrapper {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    p {
-        width: 50%;
-    }
-    a {
-        color: $lightBackground;
-        border: 2px solid $accentAccent;
-        border-radius: 10px;
-        padding: 5px 20px;
 
-        &:hover {
-            
+    p {
+        margin: 20px 0;
+    };
+
+    
+    .heading {
+        position: relative;
+        width: 100%;
+        h1 {
+            margin: 0 0 20px 0;
+            text-align: left;
+            color: $accentAccent;
+            font-size: 8rem;
+            line-height: 1.2; 
         }
+
+        
+
+        img {
+            position: absolute;
+            left: 190px;
+            top: 0px;
+            width: 100px;
+        }
+
     }
+    
 }

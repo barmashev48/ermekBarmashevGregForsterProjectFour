@@ -1,3 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1.4;
+  font-size: 2rem;
+}
+
+header,
+section {
+  min-height: 100vh;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  font-size: 2.4rem;
+}
+
+fieldset {
+  border: 0;
+}
+
+.scrollButton,
+.submitButton {
+  color: #eeeeee;
+  border: 2px solid #C3073F;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #C3073F), color-stop(50%, rgba(255, 255, 255, 0)));
+  background: linear-gradient(to right, #C3073F 50%, rgba(255, 255, 255, 0) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  -webkit-transition: all 0.7s ease-in;
+  transition: all 0.7s ease-in;
+}
+
+.scrollButton:hover,
+.submitButton:hover {
+  background-position: left bottom;
+}
+
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -269,43 +324,6 @@ html {
   overflow: hidden;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: 'Rubik', sans-serif;
-  line-height: 1.4;
-}
-
-header, section {
-  min-height: 100vh;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-a {
-  text-decoration: none;
-  font-size: 2.4rem;
-}
-
-fieldset {
-  border: 0;
-}
-
-main {
-  background-color: #eeeeee;
-}
-
 main form .categoryChoiceWrapper {
   display: -ms-grid;
   display: grid;
@@ -351,6 +369,14 @@ fieldset {
   width: 50%;
 }
 
+.mealCategory {
+  background-color: #eeeeee;
+}
+
+.drinkCategory {
+  background-color: #1A1A1D;
+}
+
 header {
   height: 100vh;
   display: -webkit-box;
@@ -370,18 +396,43 @@ header {
   color: white;
 }
 
-header h1 {
-  color: #C3073F;
-  font-size: 8rem;
+header .headerWrapper {
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header p {
-  width: 50%;
+  margin: 20px 0;
 }
 
-header a {
-  color: #eeeeee;
-  border: 2px solid #C3073F;
-  border-radius: 10px;
-  padding: 5px 20px;
+header .heading {
+  position: relative;
+  width: 100%;
+}
+
+header .heading h1 {
+  margin: 0 0 20px 0;
+  text-align: left;
+  color: #C3073F;
+  font-size: 8rem;
+  line-height: 1.2;
+}
+
+header .heading img {
+  position: absolute;
+  left: 190px;
+  top: 0px;
+  width: 100px;
 }

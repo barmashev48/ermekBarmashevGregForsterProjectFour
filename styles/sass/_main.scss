@@ -1,5 +1,4 @@
 main {
-  background-color: $lightBackground;  
   form {
     .categoryChoiceWrapper {
       display: grid;
@@ -36,4 +35,14 @@ fieldset {
   .drinkInfo {
     width: 50%;
   }
+}
+
+.mealCategory {
+  background-color: $lightBackground;
+
+}
+
+.drinkCategory {
+  background-color: $darkBackground;
+
 }
