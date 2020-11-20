@@ -10,7 +10,7 @@ app.drinkSearchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php";
 //Get the value of meal/drink inputs and passes to the function that makes api call
 app.submitHandler = function (e) {
   e.preventDefault();
-  app.scroll(e, $(".resultsSection"))
+  app.scroll($(".resultsSection"));
   const categoryMeal = $("input[name=categoryMeal]:checked").val();
   const categoryDrink = $("input[name=categoryDrink]:checked").val();
 
@@ -55,7 +55,7 @@ app.searchRecipe = function (url, name, type) {
 };
 
 //Display meal recipe on the page
-app.displayMeal = function ({ strMeal, strCategory, strArea, strInstructions, strMealThumb, strYoutube, }) {
+app.displayMeal = function ({ strMeal, strCategory, strArea, strInstructions, strMealThumb, strYoutube, strIngredient1, strIngredient2, strIngredient3, strIngredient4,strIngredient5 }) {
 
   const mealRecipeHtml = `
     <div class="displayedRecipe">
@@ -64,7 +64,14 @@ app.displayMeal = function ({ strMeal, strCategory, strArea, strInstructions, st
       <p class="category">${strCategory}</p>
       <img src="${strMealThumb}" alt="${strMeal}">
       <p class="instructions">${strInstructions}</p>
-      <a href="">${strYoutube}</a>
+      <h4>Ingredients:</h4>
+      <ul>
+        <li>${strIngredient1}</li>
+        <li>${strIngredient2}</li>
+        <li>${strIngredient3}</li>
+        <li>${strIngredient4}</li>
+        <li>${strIngredient5}</li>
+      </ul>
     </div>
   `;
 
@@ -72,7 +79,7 @@ app.displayMeal = function ({ strMeal, strCategory, strArea, strInstructions, st
 };
 
 //Display drink recipe on the page
-app.displayDrink = function ({ strDrink, strAlcoholic, strCategory, strInstructions, strDrinkThumb }) {
+app.displayDrink = function ({ strDrink, strAlcoholic, strCategory, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4,strIngredient5 }) {
 
   const drinkRecipeHtml = `
     <div class="displayedRecipe">
@@ -81,6 +88,14 @@ app.displayDrink = function ({ strDrink, strAlcoholic, strCategory, strInstructi
       <p class="category">${strCategory}</p>
       <img src="${strDrinkThumb}" alt="${strDrink}">
       <p class="instructions">${strInstructions}</p>
+      <h4>Ingredients:</h4>
+      <ul>
+        <li>${strIngredient1}</li>
+        <li>${strIngredient2}</li>
+        <li>${strIngredient3}</li>
+        <li>${strIngredient4}</li>
+        <li>${strIngredient5}</li>
+      </ul>
     </div>
   `;
 
@@ -92,8 +107,7 @@ app.getRandomIndex = function (arrayLength) {
   return Math.floor(Math.random() * arrayLength);
 };
 
-app.scroll = function (e, destination) {
-  e.preventDefault();
+app.scroll = function (destination) {
   $('html, body').animate({
     scrollTop: destination.offset().top
   }, 1000);
@@ -109,12 +123,20 @@ app.categoryChecked = function () {
 // All event listeners
 app.eventListeners = function () {
   $("form").on("submit", app.submitHandler);
-  $(".goToMeal").on('click', (e) => { app.scroll(e, $(".mealCategory")) });
-  $(".goToDrinks").on('click', (e) => { app.scroll(e, $(".drinkCategory")) });
+  $(".goToMeal").on('click', (e) => { 
+    e.preventDefault();
+    app.scroll($(".mealCategory")); 
+  });
+
+  $(".goToDrinks").on('click', (e) => { 
+    e.preventDefault();
+    app.scroll($(".drinkCategory")); 
+  });
   $("form").on("change", () => { app.categoryChecked() });
 };
 
 $(function () {
   app.init();
   app.eventListeners();
+  app.scroll( $("header"));
 });
