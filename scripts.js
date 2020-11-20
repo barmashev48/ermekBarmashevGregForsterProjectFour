@@ -10,6 +10,7 @@ app.drinkSearchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php";
 //Get the value of meal/drink inputs and passes to the function that makes api call
 app.submitHandler = function (e) {
   e.preventDefault();
+  app.scroll(e, $(".resultsSection"))
   const categoryMeal = $("input[name=categoryMeal]:checked").val();
   const categoryDrink = $("input[name=categoryDrink]:checked").val();
 

@@ -75,6 +75,14 @@ label {
   cursor: pointer;
 }
 
+.resultsWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+}
+
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;

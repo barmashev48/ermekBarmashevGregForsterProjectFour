@@ -68,3 +68,9 @@ label {
   color: $darkBackground;
   cursor: pointer;
 }
+
+.resultsWrapper {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+}
