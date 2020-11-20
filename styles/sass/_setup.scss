@@ -229,7 +229,7 @@ html {
   font-size: 62.5%;
 }
 body {
-  // font-family: 'Trispace', sans-serif;
+  font-family: 'Rubik', sans-serif;
   // background-color: $background;
   // color: $text-on-dark;
   line-height: 1.4;
@@ -241,6 +241,10 @@ img {
   width: 100%;
   height: auto;
   display: block;
+}
+a {
+  text-decoration: none;
+  font-size: 2.4rem;
 }
 fieldset {
   border: 0;

@@ -279,6 +279,7 @@ html {
 }
 
 body {
+  font-family: 'Rubik', sans-serif;
   line-height: 1.4;
 }
 
@@ -292,8 +293,17 @@ img {
   display: block;
 }
 
+a {
+  text-decoration: none;
+  font-size: 2.4rem;
+}
+
 fieldset {
   border: 0;
+}
+
+main {
+  background-color: #eeeeee;
 }
 
 main form .categoryChoiceWrapper {
@@ -304,13 +314,13 @@ main form .categoryChoiceWrapper {
 }
 
 main form .categoryChoiceWrapper .mealCategoryOption:nth-child(13) {
-  -ms-grid-column: col-start 2;
-      grid-column-start: col-start 2;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
 }
 
 main form .categoryChoiceWrapper .mealCategoryOption:nth-child(14) {
-  -ms-grid-column: col-start 3;
-      grid-column-start: col-start 3;
+  -ms-grid-column: 3;
+      grid-column-start: 3;
 }
 
 fieldset {
@@ -346,10 +356,32 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: flex;
-      -ms-flex-pack: flex;
-          justify-content: flex;
-  -webkit-box-align: flex;
-      -ms-flex-align: flex;
-          align-items: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1A1A1D;
+  color: white;
+}
+
+header h1 {
+  color: #C3073F;
+  font-size: 8rem;
+}
+
+header p {
+  width: 50%;
+}
+
+header a {
+  color: #eeeeee;
+  border: 2px solid #C3073F;
+  border-radius: 10px;
+  padding: 5px 20px;
 }

@@ -91,9 +91,18 @@ app.getRandomIndex = function (arrayLength) {
   return Math.floor(Math.random() * arrayLength);
 };
 
+app.scroll = function (e, destination) {
+  e.preventDefault();
+  $('html, body').animate({
+    scrollTop: destination.offset().top
+  }, 1000);
+}
+
 //All event listeners
 app.eventListeners = function () {
   $("form").on("submit", app.submitHandler);
+  $(".goToMeal").on('click', (e) => { app.scroll(e, $(".mealCategory")) });
+  $(".goToDrinks").on('click', (e) => { app.scroll(e, $(".drinkCategory")) });
 };
 
 $(function () {
