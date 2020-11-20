@@ -15,13 +15,11 @@ fieldset {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
     .mealCategoryOption {
-      padding: 20px 10px;
       cursor: pointer;
       text-transform: uppercase;
       text-align: center;
       background-color: $textOnDark;
       color: white;
-      
 
       &:hover {
         background-color: $mainAccent;
@@ -42,10 +40,6 @@ fieldset {
 
     .mealCategoryOption:nth-child(12) {
       border-bottom-right-radius: 15px;          
-    }
-
-    label {
-      cursor: pointer;
     }
   
     .mealCategoryOption:nth-child(13) {
@@ -87,12 +81,11 @@ fieldset {
     grid-template-columns: 1fr 1fr 1fr;
 
     .drinkCategoryOption {
-        padding: 20px 10px;
         cursor: pointer;
         text-transform: uppercase;
         text-align: center;
-        background-color: $textOnDark;
-        color: white;
+        background-color: $lightBackground;
+        color: $darkBackground;
         
 
         &:hover {
@@ -116,5 +109,6 @@ fieldset {
       border-bottom-right-radius: 15px;          
     }
   }
-
 }
+
+

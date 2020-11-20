@@ -98,11 +98,17 @@ app.scroll = function (e, destination) {
   }, 1000);
 }
 
-//All event listeners
+app.categoryChecked = function () {
+  $(".checked").removeClass('checked');
+  $("input:checked").parent().toggleClass('checked');
+}
+
+// All event listeners
 app.eventListeners = function () {
   $("form").on("submit", app.submitHandler);
   $(".goToMeal").on('click', (e) => { app.scroll(e, $(".mealCategory")) });
   $(".goToDrinks").on('click', (e) => { app.scroll(e, $(".drinkCategory")) });
+  $("form").on("change", () => { app.categoryChecked() });
 };
 
 $(function () {
