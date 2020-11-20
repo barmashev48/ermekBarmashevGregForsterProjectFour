@@ -99,6 +99,8 @@ app.scroll = function (e, destination) {
 }
 
 app.categoryChecked = function () {
+  console.log('here')
+  console.log($("input:checked"))
   $(".checked").removeClass('checked');
   $("input:checked").parent().toggleClass('checked');
 }
