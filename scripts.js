@@ -134,55 +134,99 @@ app.eventListeners = function () {
   });
   $("form").on("change", () => { app.categoryChecked() });
 
-  // $('.mealCategoryOption:nth-child(1)').hover(() => console.log('test'));
-
-  // $(`.mealCategoryOption:nth-child(${i})`).hover(
-  //   function () { 
-  //     $(`.mealCategoryOption:nth-child(${i + 1})`).addClass('hover');
-  //     $(`.mealCategoryOption:nth-child(${i - 1})`).addClass('hover');
-  //   },
-  //   function () { 
-  //     $(`.mealCategoryOption:nth-child(${i + 1})`).removeClass('hover');
-  //     $(`.mealCategoryOption:nth-child(${i - 1})`).removeClass('hover');
-  //   }
-  // );
-
   for (let i = 1; i <= 4; i++) {
     for (let j = 1; j <= 3; j++) {
       if (j === 1) {
         $(`.mealCategoryOption:nth-child(${i})`).hover(
-          app.addHoverClass(i, j),
-          app.removeHoverClass(i, j)
+          function () { app.addHoverClass(i, j) },
+          function () { app.removeHoverClass(i, j) }
         );
       } else if (j === 2) {
-        $(`.mealCategoryOption:nth-child(${i + 5})`).hover(
-          app.addHoverClass(i, j),
-          app.removeHoverClass(i, j)
+        $(`.mealCategoryOption:nth-child(${i + 4})`).hover(
+          function () { app.addHoverClass(i + 4, j) },
+          function () { app.removeHoverClass(i + 4, j) }
         )
-      } else {
-        $(`.mealCategoryOption:nth-child(${i + 9})`).hover(
-          app.addHoverClass(i, j),
-          app.removeHoverClass(i, j)
+      } else if (j === 3){
+        $(`.mealCategoryOption:nth-child(${i + 8})`).hover(
+          function () { app.addHoverClass(i + 8, j) },
+          function () { app.removeHoverClass(i + 8, j) }
         );
       }
-      // // $(app.mealButtonStructure[i][j]).hover(console.log('test'));
-      // console.log(app.mealButtonStructure[i][j]);
-      // app.mealButtonStructure[i][j].toggleClass('test');
     }
   }
-  // $(".mealCategoryOption").hover((e) => { app.buttonHovered(e) })
+  for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= 3; j++) {
+      if (j === 1) {
+        $(`.drinkCategoryOption:nth-child(${i})`).hover(
+          function () { app.addHoverDrinkClass(i, j) },
+          function () { app.removeHoverDrinkClass(i, j) }
+        );
+      } else if (j === 2) {
+        $(`.drinkCategoryOption:nth-child(${i + 3})`).hover(
+          function () { app.addHoverDrinkClass(i + 3, j) },
+          function () { app.removeHoverDrinkClass(i + 3, j) }
+        )
+      } else if (j === 3) {
+        $(`.drinkCategoryOption:nth-child(${i + 6})`).hover(
+          function () { app.addHoverDrinkClass(i + 6, j) },
+          function () { app.removeHoverDrinkClass(i + 6, j) }
+        );
+      }
+    }
+  }
 };
 
 
 app.addHoverClass = function (i, j) {
-  $(`.mealCategoryOption:nth-child(${i + 1})`).addClass('hover');
-  $(`.mealCategoryOption:nth-child(${i - 1})`).addClass('hover');
-  // $(`.mealCategoryOption:nth-child(${j + 1})`).addClass('hover');
-  // $(`.mealCategoryOption:nth-child(${j - 1})`).addClass('hover');
+  if (j === 1) {
+    $(`.mealCategoryOption:nth-child(${i + 4})`).addClass('hover');
+  } else if (j === 2) {
+    $(`.mealCategoryOption:nth-child(${i - 4})`).addClass('hover');
+    $(`.mealCategoryOption:nth-child(${i + 4})`).addClass('hover');
+  } else if (j === 3) {
+    $(`.mealCategoryOption:nth-child(${i - 4})`).addClass('hover');
+  }
+  
+  if (i === 5 || i === 9) {
+    $(`.mealCategoryOption:nth-child(${i + 1})`).addClass('hover');
+  } else if (i === 4 || i === 8) {
+    $(`.mealCategoryOption:nth-child(${i - 1})`).addClass('hover');
+  } else {
+    $(`.mealCategoryOption:nth-child(${i + 1})`).addClass('hover');
+    $(`.mealCategoryOption:nth-child(${i - 1})`).addClass('hover');
+  }
 }
-app.removeHoverClass = function (i, j) {
+app.removeHoverClass = function (i) {
   $(`.mealCategoryOption:nth-child(${i + 1})`).removeClass('hover');
   $(`.mealCategoryOption:nth-child(${i - 1})`).removeClass('hover');
+  $(`.mealCategoryOption:nth-child(${i - 4})`).removeClass('hover');
+  $(`.mealCategoryOption:nth-child(${i + 4})`).removeClass('hover');
+}
+
+app.addHoverDrinkClass = function (i, j) {
+  if (j === 1) {
+    $(`.drinkCategoryOption:nth-child(${i + 3})`).addClass('hover');
+  } else if (j === 2) {
+    $(`.drinkCategoryOption:nth-child(${i - 3})`).addClass('hover');
+    $(`.drinkCategoryOption:nth-child(${i + 3})`).addClass('hover');
+  } else if (j === 3) {
+    $(`.drinkCategoryOption:nth-child(${i - 3})`).addClass('hover');
+  }
+
+  if (i === 4 || i === 7) {
+    $(`.drinkCategoryOption:nth-child(${i + 1})`).addClass('hover');
+  } else if (i === 3 || i === 6) {
+    $(`.drinkCategoryOption:nth-child(${i - 1})`).addClass('hover');
+  } else {
+    $(`.drinkCategoryOption:nth-child(${i + 1})`).addClass('hover');
+    $(`.drinkCategoryOption:nth-child(${i - 1})`).addClass('hover');
+  }
+}
+app.removeHoverDrinkClass = function (i) {
+  $(`.drinkCategoryOption:nth-child(${i + 1})`).removeClass('hover');
+  $(`.drinkCategoryOption:nth-child(${i - 1})`).removeClass('hover');
+  $(`.drinkCategoryOption:nth-child(${i - 3})`).removeClass('hover');
+  $(`.drinkCategoryOption:nth-child(${i + 3})`).removeClass('hover');
 }
 
 

@@ -84,7 +84,7 @@ label {
 }
 
 .hover {
-  background-color: goldenrod !important;
+  opacity: 0.9 !important;
 }
 
 html {
@@ -456,8 +456,6 @@ fieldset .categoryMealWrapper .mealCategoryOption {
 
 fieldset .categoryMealWrapper .mealCategoryOption:hover {
   background-color: #950740;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
 }
 
 fieldset .categoryMealWrapper .mealCategoryOption:nth-child(1) {
@@ -527,8 +525,6 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
 
 .drinkCategory .categoryDrinkWrapper .drinkCategoryOption:hover {
   background-color: #950740;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
 }
 
 .drinkCategory .categoryDrinkWrapper .drinkCategoryOption:nth-child(1) {
