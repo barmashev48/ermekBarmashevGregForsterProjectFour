@@ -133,7 +133,95 @@ app.eventListeners = function () {
     app.scroll($(".drinkCategory")); 
   });
   $("form").on("change", () => { app.categoryChecked() });
+
+  // $('.mealCategoryOption:nth-child(1)').hover(() => console.log('test'));
+
+  // $(`.mealCategoryOption:nth-child(${i})`).hover(
+  //   function () { 
+  //     $(`.mealCategoryOption:nth-child(${i + 1})`).addClass('hover');
+  //     $(`.mealCategoryOption:nth-child(${i - 1})`).addClass('hover');
+  //   },
+  //   function () { 
+  //     $(`.mealCategoryOption:nth-child(${i + 1})`).removeClass('hover');
+  //     $(`.mealCategoryOption:nth-child(${i - 1})`).removeClass('hover');
+  //   }
+  // );
+
+  for (let i = 1; i <= 4; i++) {
+    for (let j = 1; j <= 3; j++) {
+      if (j === 1) {
+        $(`.mealCategoryOption:nth-child(${i})`).hover(
+          app.addHoverClass(i, j),
+          app.removeHoverClass(i, j)
+        );
+      } else if (j === 2) {
+        $(`.mealCategoryOption:nth-child(${i + 5})`).hover(
+          app.addHoverClass(i, j),
+          app.removeHoverClass(i, j)
+        )
+      } else {
+        $(`.mealCategoryOption:nth-child(${i + 9})`).hover(
+          app.addHoverClass(i, j),
+          app.removeHoverClass(i, j)
+        );
+      }
+      // // $(app.mealButtonStructure[i][j]).hover(console.log('test'));
+      // console.log(app.mealButtonStructure[i][j]);
+      // app.mealButtonStructure[i][j].toggleClass('test');
+    }
+  }
+  // $(".mealCategoryOption").hover((e) => { app.buttonHovered(e) })
 };
+
+
+app.addHoverClass = function (i, j) {
+  $(`.mealCategoryOption:nth-child(${i + 1})`).addClass('hover');
+  $(`.mealCategoryOption:nth-child(${i - 1})`).addClass('hover');
+  // $(`.mealCategoryOption:nth-child(${j + 1})`).addClass('hover');
+  // $(`.mealCategoryOption:nth-child(${j - 1})`).addClass('hover');
+}
+app.removeHoverClass = function (i, j) {
+  $(`.mealCategoryOption:nth-child(${i + 1})`).removeClass('hover');
+  $(`.mealCategoryOption:nth-child(${i - 1})`).removeClass('hover');
+}
+
+
+
+// Data structure for buttons 
+// app.mealButtonStructure = [
+//   [
+//     $('mealCategoryOption:nth-child(1)'),
+//     $('mealCategoryOption:nth-child(5)'),
+//     $('mealCategoryOption:nth-child(9)')
+//   ],
+//   [
+//     $('mealCategoryOption:nth-child(2)'),
+//     $('mealCategoryOption:nth-child(6)'),
+//     $('mealCategoryOption:nth-child(10)')
+//   ],
+//   [
+//     $('mealCategoryOption:nth-child(3)'),
+//     $('mealCategoryOption:nth-child(7)'),
+//     $('mealCategoryOption:nth-child(11)')
+//   ],
+//   [
+//     $('mealCategoryOption:nth-child(4)'),
+//     $('mealCategoryOption:nth-child(8)'),
+//     $('mealCategoryOption:nth-child(12)')
+//   ]
+// ]
+// console.log(app.mealButtonStructure);
+// app.drinkButtonStructure = [
+
+// ]
+
+
+
+
+// app.buttonHovered = function (e) {
+//   console.log(e);
+//   console.log(app.mealButtonStructure[0][0]);
+// }
 
 $(function () {
   app.init();

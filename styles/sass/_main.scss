@@ -23,6 +23,7 @@ fieldset {
 
       &:hover {
         background-color: $mainAccent;
+        transform: scale(1.2);
       }
     }
 
@@ -90,6 +91,7 @@ fieldset {
 
         &:hover {
           background-color: $mainAccent;
+          transform: scale(1.2);
         }
     }
 
