@@ -53,7 +53,7 @@ app.searchRecipe = function (url, name, type) {
     // console.log(res);
     let ingredients = [];
     for (let i = 1; i <= 20; i++) {
-      if (res[type][0][`strIngredient${i}`] !== null && res[type][0][`strIngredient${i}`] !== "") {
+      if (res[type][0][`strIngredient${i}`] !== null && res[type][0][`strIngredient${i}`] !== "" && res[type][0][`strIngredient${i}`]) {
         ingredients.push(res[type][0][`strIngredient${i}`]);
       }
     }
@@ -80,6 +80,11 @@ app.displayMeal = function ({
       <h3>${strArea}</h3>
       <h4>${strCategory}</h4>
       <img src="${strMealThumb}" alt="${strMeal}">
+      <button class="showInstructions">Show instructions
+        <span class="instructionArrow"> 
+          <i class="fas fa-chevron-right"></i>
+        </span>
+      </button>
       <p class="instructions">${strInstructions}</p>
       <h4>Ingredients:</h4>
       <ul>
@@ -91,6 +96,15 @@ app.displayMeal = function ({
   ingredients.forEach(item => {
     let displayIngredient = `<li>${item}</li>`
     $(".mealRecipe ul").append(displayIngredient);
+  })
+  $('.showInstructions').on('click', () => {
+    if ($('.instructionArrow i').attr('class') === 'fas fa-chevron-right') {
+      $('.instructions').slideDown();
+      $('.instructionArrow i').attr('class', 'fas fa-chevron-down');
+    } else if ($('.instructionArrow i').attr('class') === 'fas fa-chevron-down') {
+      $('.instructions').slideUp();
+      $('.instructionArrow i').attr('class', 'fas fa-chevron-right');
+    }
   })
 };
 
@@ -111,11 +125,6 @@ app.displayDrink = function ({
       <p class="instructions">${strInstructions}</p>
       <h4>Ingredients:</h4>
       <ul>
-        <li>${strIngredient1}</li>
-        <li>${strIngredient2}</li>
-        <li>${strIngredient3}</li>
-        <li>${strIngredient4}</li>
-        <li>${strIngredient5}</li>
       </ul>
     </div>
   `;
@@ -141,8 +150,8 @@ app.scroll = function (destination) {
 };
 
 app.categoryChecked = function () {
-  console.log("here");
-  console.log($("input:checked"));
+  // console.log("here");
+  // console.log($("input:checked"));
   $(".checked").removeClass("checked");
   $("input:checked").parent().toggleClass("checked");
 };
@@ -170,7 +179,7 @@ app.eventListeners = function () {
     app.categoryChecked();
   });
 
-  $(".startAgainButton").on('click', (e) =>{app.startAgain(e)});
+  $(".startAgainButton").on('click', (e) => { app.startAgain(e) });
 
   for (let i = 1; i <= 4; i++) {
     for (let j = 1; j <= 3; j++) {

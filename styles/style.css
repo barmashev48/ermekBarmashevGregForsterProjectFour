@@ -578,6 +578,16 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
           align-items: center;
 }
 
+.resultsSection .instructions {
+  display: none;
+}
+
+.resultsSection .showInstructions {
+  cursor: pointer;
+  border: none;
+  margin: 10px 0;
+}
+
 .resultsSection .mealRecipe,
 .resultsSection .drinkRecipe {
   width: 48%;
@@ -594,6 +604,8 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
 
 .resultsSection .drinkRecipe {
   color: #eeeeee;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .resultsWrapper {

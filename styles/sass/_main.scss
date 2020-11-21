@@ -106,6 +106,14 @@ fieldset {
   flex-direction: column;
   align-items: center;
 
+  .instructions {
+    display: none;
+  }
+  .showInstructions {
+    cursor: pointer;
+    border: none;
+    margin: 10px 0;
+  }
   .mealRecipe,
   .drinkRecipe {
     width: 48%;
@@ -118,9 +126,9 @@ fieldset {
       margin: 10px 0 0 5px;
     };
   }
-
   .drinkRecipe {
     color: $lightBackground;
+    align-self: flex-start;
   }
 }
 
