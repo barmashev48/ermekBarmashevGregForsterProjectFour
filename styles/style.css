@@ -69,6 +69,16 @@ label {
   background-position: left bottom;
 }
 
+.resultsSection .goBack {
+  color: #1A1A1D;
+}
+
+.goBack {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
 .submitButton {
   background-color: #eeeeee;
   color: #1A1A1D;
@@ -488,6 +498,7 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
 }
 
 .resultsSection .mealInfo,
@@ -497,6 +508,7 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
 
 .mealCategory {
   background-color: #eeeeee;
+  position: relative;
 }
 
 .mealCategory .scrollButton {
@@ -506,6 +518,7 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
 .drinkCategory {
   background-color: #1A1A1D;
   color: white;
+  position: relative;
 }
 
 .drinkCategory .categoryDrinkWrapper {

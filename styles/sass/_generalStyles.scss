@@ -63,6 +63,16 @@ label {
   }
 }
 
+.resultsSection .goBack{
+  color: $darkBackground;
+}
+
+.goBack {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
 .submitButton {
   background-color: $lightBackground;
   color: $darkBackground;

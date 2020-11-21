@@ -54,6 +54,7 @@ fieldset {
 
 .resultsSection {
   display: flex;
+  position: relative;
 
   .mealInfo,
   .drinkInfo {
@@ -63,6 +64,7 @@ fieldset {
 
 .mealCategory {
   background-color: $lightBackground;
+  position: relative;
 
   .scrollButton {
     background-color: $textOnDark;
@@ -75,6 +77,7 @@ fieldset {
 .drinkCategory {
   background-color: $darkBackground;
   color: white;
+  position: relative;
 
   .categoryDrinkWrapper {
     display: grid;
