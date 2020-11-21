@@ -32,7 +32,8 @@ app.filterByCategory = function (category, url) {
       const mealName = res.meals[app.getRandomIndex(res.meals.length)].strMeal;
       app.searchRecipe(app.mealSearchUrl, mealName, "meals");
     } else {
-      const drinkName = res.drinks[app.getRandomIndex(res.drinks.length)].strDrink;
+      const drinkName =
+        res.drinks[app.getRandomIndex(res.drinks.length)].strDrink;
       app.searchRecipe(app.drinkSearchUrl, drinkName, "drinks");
     }
   });
@@ -55,13 +56,24 @@ app.searchRecipe = function (url, name, type) {
 };
 
 //Display meal recipe on the page
-app.displayMeal = function ({ strMeal, strCategory, strArea, strInstructions, strMealThumb, strYoutube, strIngredient1, strIngredient2, strIngredient3, strIngredient4,strIngredient5 }) {
-
+app.displayMeal = function ({
+  strMeal,
+  strCategory,
+  strArea,
+  strInstructions,
+  strMealThumb,
+  strYoutube,
+  strIngredient1,
+  strIngredient2,
+  strIngredient3,
+  strIngredient4,
+  strIngredient5,
+}) {
   const mealRecipeHtml = `
     <div class="displayedRecipe">
       <h2>${strMeal}</h2>
       <h3>${strArea}</h3>
-      <p class="category">${strCategory}</p>
+      <h4>${strCategory}</h4>
       <img src="${strMealThumb}" alt="${strMeal}">
       <p class="instructions">${strInstructions}</p>
       <h4>Ingredients:</h4>
@@ -79,13 +91,23 @@ app.displayMeal = function ({ strMeal, strCategory, strArea, strInstructions, st
 };
 
 //Display drink recipe on the page
-app.displayDrink = function ({ strDrink, strAlcoholic, strCategory, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4,strIngredient5 }) {
-
+app.displayDrink = function ({
+  strDrink,
+  strAlcoholic,
+  strCategory,
+  strInstructions,
+  strDrinkThumb,
+  strIngredient1,
+  strIngredient2,
+  strIngredient3,
+  strIngredient4,
+  strIngredient5,
+}) {
   const drinkRecipeHtml = `
     <div class="displayedRecipe">
       <h2>${strDrink}</h2>
       <h3>${strAlcoholic}</h3>
-      <p class="category">${strCategory}</p>
+      <h4>${strCategory}</h4>
       <img src="${strDrinkThumb}" alt="${strDrink}">
       <p class="instructions">${strInstructions}</p>
       <h4>Ingredients:</h4>
@@ -108,130 +130,172 @@ app.getRandomIndex = function (arrayLength) {
 };
 
 app.scroll = function (destination) {
-  $('html, body').animate({
-    scrollTop: destination.offset().top
-  }, 1000);
-}
+  $("html, body").animate(
+    {
+      scrollTop: destination.offset().top,
+    },
+    700
+  );
+};
 
 app.categoryChecked = function () {
-  console.log('here')
-  console.log($("input:checked"))
-  $(".checked").removeClass('checked');
-  $("input:checked").parent().toggleClass('checked');
+  console.log("here");
+  console.log($("input:checked"));
+  $(".checked").removeClass("checked");
+  $("input:checked").parent().toggleClass("checked");
+};
+
+app.startAgain = function(e){
+  e.preventDefault();
+  $('form').trigger("reset");
+  app.scroll($("header"));
 }
 
 // All event listeners
 app.eventListeners = function () {
   $("form").on("submit", app.submitHandler);
-  $(".goToMeal").on('click', (e) => { 
+  $(".goToMeal").on("click", (e) => {
     e.preventDefault();
-    app.scroll($(".mealCategory")); 
+    app.scroll($(".mealCategory"));
   });
 
-  $(".goToDrinks").on('click', (e) => { 
+  $(".goToDrinks").on("click", (e) => {
     e.preventDefault();
-    app.scroll($(".drinkCategory")); 
+    app.scroll($(".drinkCategory"));
   });
-  $("form").on("change", () => { app.categoryChecked() });
+
+  $("form").on("change", () => {
+    app.categoryChecked();
+  });
+
+  $(".startAgainButton").on('click', (e) =>{app.startAgain(e)});
 
   for (let i = 1; i <= 4; i++) {
     for (let j = 1; j <= 3; j++) {
-      if (j === 1) {
-        $(`.mealCategoryOption:nth-child(${i})`).hover(
-          function () { app.addHoverClass(i, j) },
-          function () { app.removeHoverClass(i, j) }
-        );
-      } else if (j === 2) {
-        $(`.mealCategoryOption:nth-child(${i + 4})`).hover(
-          function () { app.addHoverClass(i + 4, j) },
-          function () { app.removeHoverClass(i + 4, j) }
-        )
-      } else if (j === 3){
-        $(`.mealCategoryOption:nth-child(${i + 8})`).hover(
-          function () { app.addHoverClass(i + 8, j) },
-          function () { app.removeHoverClass(i + 8, j) }
-        );
+      switch (j) {
+        case 1:
+          $(`.mealCategoryOption:nth-child(${i})`).hover(
+            function () {
+              app.addHoverClass(i, j);
+            },
+            function () {
+              app.removeHoverClass(i, j);
+            }
+          );
+
+        case 2:
+          $(`.mealCategoryOption:nth-child(${i + 4})`).hover(
+            function () {
+              app.addHoverClass(i + 4, j);
+            },
+            function () {
+              app.removeHoverClass(i + 4, j);
+            }
+          );
+        case 3:
+          $(`.mealCategoryOption:nth-child(${i + 8})`).hover(
+            function () {
+              app.addHoverClass(i + 8, j);
+            },
+            function () {
+              app.removeHoverClass(i + 8, j);
+            }
+          );
       }
     }
   }
   for (let i = 1; i <= 3; i++) {
     for (let j = 1; j <= 3; j++) {
-      if (j === 1) {
-        $(`.drinkCategoryOption:nth-child(${i})`).hover(
-          function () { app.addHoverDrinkClass(i, j) },
-          function () { app.removeHoverDrinkClass(i, j) }
-        );
-      } else if (j === 2) {
-        $(`.drinkCategoryOption:nth-child(${i + 3})`).hover(
-          function () { app.addHoverDrinkClass(i + 3, j) },
-          function () { app.removeHoverDrinkClass(i + 3, j) }
-        )
-      } else if (j === 3) {
-        $(`.drinkCategoryOption:nth-child(${i + 6})`).hover(
-          function () { app.addHoverDrinkClass(i + 6, j) },
-          function () { app.removeHoverDrinkClass(i + 6, j) }
-        );
+      switch (j) {
+        case 1:
+          $(`.drinkCategoryOption:nth-child(${i})`).hover(
+            function () {
+              app.addHoverDrinkClass(i, j);
+            },
+            function () {
+              app.removeHoverDrinkClass(i, j);
+            }
+          );
+          break;
+
+        case 2:
+          $(`.drinkCategoryOption:nth-child(${i + 3})`).hover(
+            function () {
+              app.addHoverDrinkClass(i + 3, j);
+            },
+            function () {
+              app.removeHoverDrinkClass(i + 3, j);
+            }
+          );
+          break;
+
+        case 3:
+          $(`.drinkCategoryOption:nth-child(${i + 6})`).hover(
+            function () {
+              app.addHoverDrinkClass(i + 6, j);
+            },
+            function () {
+              app.removeHoverDrinkClass(i + 6, j);
+            }
+          );
       }
     }
   }
 };
 
-
 app.addHoverClass = function (i, j) {
   if (j === 1) {
-    $(`.mealCategoryOption:nth-child(${i + 4})`).addClass('hover');
+    $(`.mealCategoryOption:nth-child(${i + 4})`).addClass("hover");
   } else if (j === 2) {
-    $(`.mealCategoryOption:nth-child(${i - 4})`).addClass('hover');
-    $(`.mealCategoryOption:nth-child(${i + 4})`).addClass('hover');
+    $(`.mealCategoryOption:nth-child(${i - 4})`).addClass("hover");
+    $(`.mealCategoryOption:nth-child(${i + 4})`).addClass("hover");
   } else if (j === 3) {
-    $(`.mealCategoryOption:nth-child(${i - 4})`).addClass('hover');
+    $(`.mealCategoryOption:nth-child(${i - 4})`).addClass("hover");
   }
-  
+
   if (i === 5 || i === 9) {
-    $(`.mealCategoryOption:nth-child(${i + 1})`).addClass('hover');
+    $(`.mealCategoryOption:nth-child(${i + 1})`).addClass("hover");
   } else if (i === 4 || i === 8) {
-    $(`.mealCategoryOption:nth-child(${i - 1})`).addClass('hover');
+    $(`.mealCategoryOption:nth-child(${i - 1})`).addClass("hover");
   } else {
-    $(`.mealCategoryOption:nth-child(${i + 1})`).addClass('hover');
-    $(`.mealCategoryOption:nth-child(${i - 1})`).addClass('hover');
+    $(`.mealCategoryOption:nth-child(${i + 1})`).addClass("hover");
+    $(`.mealCategoryOption:nth-child(${i - 1})`).addClass("hover");
   }
-}
+};
 app.removeHoverClass = function (i) {
-  $(`.mealCategoryOption:nth-child(${i + 1})`).removeClass('hover');
-  $(`.mealCategoryOption:nth-child(${i - 1})`).removeClass('hover');
-  $(`.mealCategoryOption:nth-child(${i - 4})`).removeClass('hover');
-  $(`.mealCategoryOption:nth-child(${i + 4})`).removeClass('hover');
-}
+  $(`.mealCategoryOption:nth-child(${i + 1})`).removeClass("hover");
+  $(`.mealCategoryOption:nth-child(${i - 1})`).removeClass("hover");
+  $(`.mealCategoryOption:nth-child(${i - 4})`).removeClass("hover");
+  $(`.mealCategoryOption:nth-child(${i + 4})`).removeClass("hover");
+};
 
 app.addHoverDrinkClass = function (i, j) {
   if (j === 1) {
-    $(`.drinkCategoryOption:nth-child(${i + 3})`).addClass('hover');
+    $(`.drinkCategoryOption:nth-child(${i + 3})`).addClass("hover");
   } else if (j === 2) {
-    $(`.drinkCategoryOption:nth-child(${i - 3})`).addClass('hover');
-    $(`.drinkCategoryOption:nth-child(${i + 3})`).addClass('hover');
+    $(`.drinkCategoryOption:nth-child(${i - 3})`).addClass("hover");
+    $(`.drinkCategoryOption:nth-child(${i + 3})`).addClass("hover");
   } else if (j === 3) {
-    $(`.drinkCategoryOption:nth-child(${i - 3})`).addClass('hover');
+    $(`.drinkCategoryOption:nth-child(${i - 3})`).addClass("hover");
   }
 
   if (i === 4 || i === 7) {
-    $(`.drinkCategoryOption:nth-child(${i + 1})`).addClass('hover');
+    $(`.drinkCategoryOption:nth-child(${i + 1})`).addClass("hover");
   } else if (i === 3 || i === 6) {
-    $(`.drinkCategoryOption:nth-child(${i - 1})`).addClass('hover');
+    $(`.drinkCategoryOption:nth-child(${i - 1})`).addClass("hover");
   } else {
-    $(`.drinkCategoryOption:nth-child(${i + 1})`).addClass('hover');
-    $(`.drinkCategoryOption:nth-child(${i - 1})`).addClass('hover');
+    $(`.drinkCategoryOption:nth-child(${i + 1})`).addClass("hover");
+    $(`.drinkCategoryOption:nth-child(${i - 1})`).addClass("hover");
   }
-}
+};
 app.removeHoverDrinkClass = function (i) {
-  $(`.drinkCategoryOption:nth-child(${i + 1})`).removeClass('hover');
-  $(`.drinkCategoryOption:nth-child(${i - 1})`).removeClass('hover');
-  $(`.drinkCategoryOption:nth-child(${i - 3})`).removeClass('hover');
-  $(`.drinkCategoryOption:nth-child(${i + 3})`).removeClass('hover');
-}
+  $(`.drinkCategoryOption:nth-child(${i + 1})`).removeClass("hover");
+  $(`.drinkCategoryOption:nth-child(${i - 1})`).removeClass("hover");
+  $(`.drinkCategoryOption:nth-child(${i - 3})`).removeClass("hover");
+  $(`.drinkCategoryOption:nth-child(${i + 3})`).removeClass("hover");
+};
 
-
-
-// Data structure for buttons 
+// Data structure for buttons
 // app.mealButtonStructure = [
 //   [
 //     $('mealCategoryOption:nth-child(1)'),
@@ -259,9 +323,6 @@ app.removeHoverDrinkClass = function (i) {
 
 // ]
 
-
-
-
 // app.buttonHovered = function (e) {
 //   console.log(e);
 //   console.log(app.mealButtonStructure[0][0]);
@@ -270,5 +331,5 @@ app.removeHoverDrinkClass = function (i) {
 $(function () {
   app.init();
   app.eventListeners();
-  app.scroll( $("header"));
+  // app.scroll($("header"));
 });

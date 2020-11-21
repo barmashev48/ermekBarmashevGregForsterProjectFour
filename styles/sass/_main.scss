@@ -51,17 +51,6 @@ fieldset {
   }
 }
 
-
-.resultsSection {
-  display: flex;
-  position: relative;
-
-  .mealInfo,
-  .drinkInfo {
-    width: 50%;
-  }
-}
-
 .mealCategory {
   background-color: $lightBackground;
   position: relative;
@@ -71,8 +60,6 @@ fieldset {
   }
 
 }
-
-
 
 .drinkCategory {
   background-color: $darkBackground;
@@ -112,6 +99,39 @@ fieldset {
       border-bottom-right-radius: 15px;          
     }
   }
+}
+
+.resultsSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .mealRecipe,
+  .drinkRecipe {
+    width: 48%;
+    border-radius: 20px;
+    padding: 10px 20px;
+
+    img {
+      width: 30%;
+      float: right;
+      margin: 10px 0 0 5px;
+    };
+  }
+
+  .drinkRecipe {
+    color: $lightBackground;
+  }
+}
+
+.resultsWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
 }
 
 
