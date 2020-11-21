@@ -122,7 +122,7 @@ app.displayDrink = function ({
       <h3>${strAlcoholic}</h3>
       <h4>${strCategory}</h4>
       <img src="${strDrinkThumb}" alt="${strDrink}">
-      <p class="instructions">${strInstructions}</p>
+      <p class="drinkInstructions">${strInstructions}</p>
       <h4>Ingredients:</h4>
       <ul>
       </ul>

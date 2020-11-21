@@ -5,6 +5,11 @@
 }
 
 @media (max-width: 600px) {
+
+  .headerWrapper {
+    width: 95%;
+  }
+
   fieldset .categoryDrinkWrapper,
   fieldset .categoryMealWrapper {
     width: 95%;
