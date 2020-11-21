@@ -70,6 +70,9 @@ fieldset {
     grid-template-columns: 1fr 1fr 1fr;
 
     .drinkCategoryOption {
+      display: flex;
+      justify-content: center;
+      align-items: center;
         cursor: pointer;
         text-transform: uppercase;
         text-align: center;

@@ -1,0 +1,41 @@
+@media (max-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  fieldset .categoryDrinkWrapper,
+  fieldset .categoryMealWrapper {
+    width: 95%;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  fieldset .categoryMealWrapper .mealCategoryOption:nth-child(4),
+  fieldset .categoryMealWrapper .mealCategoryOption:nth-child(9) {
+    border-radius: 0;
+  }
+
+  fieldset .categoryMealWrapper .mealCategoryOption:nth-child(3){
+    border-top-right-radius: 15px;
+  }
+
+  fieldset .categoryMealWrapper .mealCategoryOption:nth-child(10){
+    border-bottom-left-radius: 15px;
+  }
+
+  .resultsWrapper {
+    flex-direction: column;
+
+      .mealRecipe,
+      .drinkRecipe {
+        width: 100%;
+        margin: 10px; 
+      }
+
+      .mealRecipe img,
+      .drinkRecipe img {
+          width: 45%;
+      }
+  }
+}
