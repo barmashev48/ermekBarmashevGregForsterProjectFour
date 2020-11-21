@@ -650,6 +650,14 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
   header .headerWrapper {
     width: 95%;
   }
+  header .headerWrapper .heading h1 {
+    font-size: 5rem;
+  }
+  header .headerWrapper .heading img {
+    width: 80px;
+    left: 125px;
+    top: -10px;
+  }
   fieldset .categoryDrinkWrapper,
   fieldset .categoryMealWrapper {
     width: 95%;
