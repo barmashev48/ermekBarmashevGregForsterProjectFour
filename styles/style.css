@@ -74,7 +74,7 @@ label {
 }
 
 .resultsSection .goBack {
-  top: -25px;
+  top: -20px;
   color: #1A1A1D;
 }
 
@@ -599,7 +599,7 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
 .resultsWrapper {
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

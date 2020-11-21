@@ -49,9 +49,19 @@ app.searchRecipe = function (url, name, type) {
       s: name,
     },
   }).then(function (res) {
+    // console.log(res[type][0][`strIngredient${1}`]); 
+    // console.log(res);
+    let ingredients = [];
+    for (let i = 1; i <= 20; i++) {
+      if (res[type][0][`strIngredient${i}`] !== null && res[type][0][`strIngredient${i}`] !== "") {
+        ingredients.push(res[type][0][`strIngredient${i}`]);
+      }
+    }
+    console.log('this is the array');
+    console.log(ingredients);
     type === "meals"
-      ? app.displayMeal(res[type][0])
-      : app.displayDrink(res[type][0]);
+      ? app.displayMeal(res[type][0], ingredients)
+      : app.displayDrink(res[type][0], ingredients);
   });
 };
 
@@ -63,12 +73,7 @@ app.displayMeal = function ({
   strInstructions,
   strMealThumb,
   strYoutube,
-  strIngredient1,
-  strIngredient2,
-  strIngredient3,
-  strIngredient4,
-  strIngredient5,
-}) {
+}, ingredients) {
   const mealRecipeHtml = `
     <div class="displayedRecipe">
       <h2>${strMeal}</h2>
@@ -78,16 +83,15 @@ app.displayMeal = function ({
       <p class="instructions">${strInstructions}</p>
       <h4>Ingredients:</h4>
       <ul>
-        <li>${strIngredient1}</li>
-        <li>${strIngredient2}</li>
-        <li>${strIngredient3}</li>
-        <li>${strIngredient4}</li>
-        <li>${strIngredient5}</li>
+        
       </ul>
     </div>
   `;
-
   $(".mealRecipe").html(mealRecipeHtml);
+  ingredients.forEach(item => {
+    let displayIngredient = `<li>${item}</li>`
+    $(".mealRecipe ul").append(displayIngredient);
+  })
 };
 
 //Display drink recipe on the page
@@ -96,13 +100,8 @@ app.displayDrink = function ({
   strAlcoholic,
   strCategory,
   strInstructions,
-  strDrinkThumb,
-  strIngredient1,
-  strIngredient2,
-  strIngredient3,
-  strIngredient4,
-  strIngredient5,
-}) {
+  strDrinkThumb
+}, ingredients) {
   const drinkRecipeHtml = `
     <div class="displayedRecipe">
       <h2>${strDrink}</h2>
@@ -120,8 +119,11 @@ app.displayDrink = function ({
       </ul>
     </div>
   `;
-
   $(".drinkRecipe").html(drinkRecipeHtml);
+  ingredients.forEach(item => {
+    let displayIngredient = `<li>${item}</li>`
+    $(".drinkRecipe ul").append(displayIngredient);
+  })
 };
 
 //Get random number from 0 to arrayLength parameter
@@ -294,39 +296,6 @@ app.removeHoverDrinkClass = function (i) {
   $(`.drinkCategoryOption:nth-child(${i - 3})`).removeClass("hover");
   $(`.drinkCategoryOption:nth-child(${i + 3})`).removeClass("hover");
 };
-
-// Data structure for buttons
-// app.mealButtonStructure = [
-//   [
-//     $('mealCategoryOption:nth-child(1)'),
-//     $('mealCategoryOption:nth-child(5)'),
-//     $('mealCategoryOption:nth-child(9)')
-//   ],
-//   [
-//     $('mealCategoryOption:nth-child(2)'),
-//     $('mealCategoryOption:nth-child(6)'),
-//     $('mealCategoryOption:nth-child(10)')
-//   ],
-//   [
-//     $('mealCategoryOption:nth-child(3)'),
-//     $('mealCategoryOption:nth-child(7)'),
-//     $('mealCategoryOption:nth-child(11)')
-//   ],
-//   [
-//     $('mealCategoryOption:nth-child(4)'),
-//     $('mealCategoryOption:nth-child(8)'),
-//     $('mealCategoryOption:nth-child(12)')
-//   ]
-// ]
-// console.log(app.mealButtonStructure);
-// app.drinkButtonStructure = [
-
-// ]
-
-// app.buttonHovered = function (e) {
-//   console.log(e);
-//   console.log(app.mealButtonStructure[0][0]);
-// }
 
 $(function () {
   app.init();
