@@ -320,5 +320,5 @@ app.removeHoverDrinkClass = function (i) {
 $(function () {
   app.init();
   app.eventListeners();
-  // app.scroll($("header"));
+  app.scroll($("header"));
 });

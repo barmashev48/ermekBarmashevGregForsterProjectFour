@@ -9,6 +9,24 @@ fieldset {
     display: none;
   }
 
+  
+}
+
+.mealCategory {
+  background-color: $lightBackground;
+  position: relative;
+  .mealImg {
+    position: absolute;
+    left: -50%;
+    top: 10%;
+    width: 300px;
+    z-index: 1;
+  }
+
+  .scrollButton {
+    background-color: $textOnDark;
+  }
+
   .categoryMealWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -49,22 +67,6 @@ fieldset {
     .mealCategoryOption:nth-child(14) {
       grid-column-start: 3;
     }
-  }
-}
-
-.mealCategory {
-  background-color: $lightBackground;
-  position: relative;
-  .mealImg {
-    position: absolute;
-    left: -50%;
-    top: 10%;
-    width: 300px;
-    z-index: 1;
-  }
-
-  .scrollButton {
-    background-color: $textOnDark;
   }
 }
 
