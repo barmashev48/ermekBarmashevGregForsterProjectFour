@@ -29,7 +29,7 @@ fieldset {
 
   .categoryMealWrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     position: relative;
     z-index: 2;
 
@@ -49,23 +49,16 @@ fieldset {
       border-top-left-radius: 15px;
     }
 
-    .mealCategoryOption:nth-child(4) {
+    .mealCategoryOption:nth-child(3) {
       border-top-right-radius: 15px;
     }
 
-    .mealCategoryOption:nth-child(9) {
+    .mealCategoryOption:nth-child(10) {
       border-bottom-left-radius: 15px;
     }
 
     .mealCategoryOption:nth-child(12) {
       border-bottom-right-radius: 15px;
-    }
-
-    .mealCategoryOption:nth-child(13) {
-      grid-column-start: 2;
-    }
-    .mealCategoryOption:nth-child(14) {
-      grid-column-start: 3;
     }
   }
 }

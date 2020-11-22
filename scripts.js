@@ -49,8 +49,6 @@ app.searchRecipe = function (url, name, type) {
       s: name,
     },
   }).then(function (res) {
-    // console.log(res[type][0][`strIngredient${1}`]);
-    // console.log(res);
     let ingredients = [];
     for (let i = 1; i <= 20; i++) {
       if (
@@ -61,8 +59,6 @@ app.searchRecipe = function (url, name, type) {
         ingredients.push(res[type][0][`strIngredient${i}`]);
       }
     }
-    console.log("this is the array");
-    console.log(ingredients);
     type === "meals"
       ? app.displayMeal(res[type][0], ingredients)
       : app.displayDrink(res[type][0], ingredients);
@@ -149,15 +145,13 @@ app.scroll = function (destination) {
 };
 
 app.categoryChecked = function () {
-  // console.log("here");
-  // console.log($("input:checked"));
   $(".checked").removeClass("checked");
   $("input:checked").parent().toggleClass("checked");
 };
 
 app.startAgain = function (e) {
   e.preventDefault();
-  $("form").trigger("reset");
+  // $("#myForm").trigger("reset");
   app.scroll($("header"));
 };
 //Slides the image on meal choice page
@@ -189,132 +183,93 @@ app.eventListeners = function () {
   });
 
   $(".startAgainButton").on("click", (e) => {
+    $("form").trigger("reset");
+    // $("radio:checked").removeAttr('checked');
     app.startAgain(e);
   });
 
-  for (let i = 1; i <= 4; i++) {
-    for (let j = 1; j <= 3; j++) {
-      switch (j) {
-        case 1:
-          $(`.mealCategoryOption:nth-child(${i})`).hover(
-            function () {
-              app.addHoverClass(i, j);
-            },
-            function () {
-              app.removeHoverClass(i, j);
-            }
-          );
-
-        case 2:
-          $(`.mealCategoryOption:nth-child(${i + 4})`).hover(
-            function () {
-              app.addHoverClass(i + 4, j);
-            },
-            function () {
-              app.removeHoverClass(i + 4, j);
-            }
-          );
-        case 3:
-          $(`.mealCategoryOption:nth-child(${i + 8})`).hover(
-            function () {
-              app.addHoverClass(i + 8, j);
-            },
-            function () {
-              app.removeHoverClass(i + 8, j);
-            }
-          );
-      }
+  // below code is for adding hover states to input buttons
+  // first for loop is for the two different inputs: meals and drinks
+  for (let k = 0; k <= 1; k++) {
+    let category = 'meal';
+    let colHeight = 4;
+    if (k === 1) {
+      category = 'drink';
+      colHeight = 3
     }
-  }
-  for (let i = 1; i <= 3; i++) {
-    for (let j = 1; j <= 3; j++) {
-      switch (j) {
-        case 1:
-          $(`.drinkCategoryOption:nth-child(${i})`).hover(
-            function () {
-              app.addHoverDrinkClass(i, j);
-            },
-            function () {
-              app.removeHoverDrinkClass(i, j);
-            }
-          );
-          break;
-
-        case 2:
-          $(`.drinkCategoryOption:nth-child(${i + 3})`).hover(
-            function () {
-              app.addHoverDrinkClass(i + 3, j);
-            },
-            function () {
-              app.removeHoverDrinkClass(i + 3, j);
-            }
-          );
-          break;
-
-        case 3:
-          $(`.drinkCategoryOption:nth-child(${i + 6})`).hover(
-            function () {
-              app.addHoverDrinkClass(i + 6, j);
-            },
-            function () {
-              app.removeHoverDrinkClass(i + 6, j);
-            }
-          );
+    for (let i = 1; i <= 3; i++) { // each iteration of i is a column
+      for (let j = 1; j <= colHeight; j++) { // each iteration of j is a row in each column
+        switch (j) {
+          case 1: // this would be all of first row (j = 1)
+            $(`.${category}CategoryOption:nth-child(${i})`).hover( 
+              function () {
+                app.addHoverClass(i, j, category);
+              },
+              function () {
+                app.removeHoverClass(i, category);
+              }
+            );
+            break;
+          case 2: // this would be all of second row (j = 2)
+            $(`.${category}CategoryOption:nth-child(${i + 3})`).hover(
+              function () {
+                app.addHoverClass(i + 3, j, category);
+              },
+              function () {
+                app.removeHoverClass(i + 3, category);
+              }
+            );
+            break;
+          case 3: // this would be all of third row (j = 3)
+            $(`.${category}CategoryOption:nth-child(${i + 6})`).hover(
+              function () {
+                app.addHoverClass(i + 6, j, category);
+              },
+              function () {
+                app.removeHoverClass(i + 6, category);
+              }
+            );
+          case 4: // this would be all of fourth row (j = 3)
+            $(`.${category}CategoryOption:nth-child(${i + 9})`).hover(
+              function () {
+                app.addHoverClass(i + 9, j, category);
+              },
+              function () {
+                app.removeHoverClass(i + 9, category);
+              }
+            );
+        }
       }
     }
   }
 };
 
-app.addHoverClass = function (i, j) {
+app.addHoverClass = function (i, j, category) {
+  // this chain of if statements is for above and below options
   if (j === 1) {
-    $(`.mealCategoryOption:nth-child(${i + 4})`).addClass("hover");
-  } else if (j === 2) {
-    $(`.mealCategoryOption:nth-child(${i - 4})`).addClass("hover");
-    $(`.mealCategoryOption:nth-child(${i + 4})`).addClass("hover");
-  } else if (j === 3) {
-    $(`.mealCategoryOption:nth-child(${i - 4})`).addClass("hover");
+    $(`.${category}CategoryOption:nth-child(${i + 3})`).addClass("hover");
+  } else if (j === 2 || j === 3) {
+    $(`.${category}CategoryOption:nth-child(${i - 3})`).addClass("hover");
+    $(`.${category}CategoryOption:nth-child(${i + 3})`).addClass("hover");
+  } else if (j === 4) {
+    $(`.${category}CategoryOption:nth-child(${i - 3})`).addClass("hover");
   }
-
-  if (i === 5 || i === 9) {
-    $(`.mealCategoryOption:nth-child(${i + 1})`).addClass("hover");
-  } else if (i === 4 || i === 8) {
-    $(`.mealCategoryOption:nth-child(${i - 1})`).addClass("hover");
+  // this chain of if statements are for the options to the side of the current button
+  if (i === 4 || i === 7 || i === 10) { // all buttons along left wall
+    $(`.${category}CategoryOption:nth-child(${i + 1})`).addClass("hover");
+  } else if (i === 3 || i === 6 || i === 9) { // all buttons along right wall
+    $(`.${category}CategoryOption:nth-child(${i - 1})`).addClass("hover");
   } else {
-    $(`.mealCategoryOption:nth-child(${i + 1})`).addClass("hover");
-    $(`.mealCategoryOption:nth-child(${i - 1})`).addClass("hover");
+    $(`.${category}CategoryOption:nth-child(${i + 1})`).addClass("hover");
+    $(`.${category}CategoryOption:nth-child(${i - 1})`).addClass("hover");
   }
 };
-app.removeHoverClass = function (i) {
-  $(`.mealCategoryOption:nth-child(${i + 1})`).removeClass("hover");
-  $(`.mealCategoryOption:nth-child(${i - 1})`).removeClass("hover");
-  $(`.mealCategoryOption:nth-child(${i - 4})`).removeClass("hover");
-  $(`.mealCategoryOption:nth-child(${i + 4})`).removeClass("hover");
-};
-
-app.addHoverDrinkClass = function (i, j) {
-  if (j === 1) {
-    $(`.drinkCategoryOption:nth-child(${i + 3})`).addClass("hover");
-  } else if (j === 2) {
-    $(`.drinkCategoryOption:nth-child(${i - 3})`).addClass("hover");
-    $(`.drinkCategoryOption:nth-child(${i + 3})`).addClass("hover");
-  } else if (j === 3) {
-    $(`.drinkCategoryOption:nth-child(${i - 3})`).addClass("hover");
-  }
-
-  if (i === 4 || i === 7) {
-    $(`.drinkCategoryOption:nth-child(${i + 1})`).addClass("hover");
-  } else if (i === 3 || i === 6) {
-    $(`.drinkCategoryOption:nth-child(${i - 1})`).addClass("hover");
-  } else {
-    $(`.drinkCategoryOption:nth-child(${i + 1})`).addClass("hover");
-    $(`.drinkCategoryOption:nth-child(${i - 1})`).addClass("hover");
-  }
-};
-app.removeHoverDrinkClass = function (i) {
-  $(`.drinkCategoryOption:nth-child(${i + 1})`).removeClass("hover");
-  $(`.drinkCategoryOption:nth-child(${i - 1})`).removeClass("hover");
-  $(`.drinkCategoryOption:nth-child(${i - 3})`).removeClass("hover");
-  $(`.drinkCategoryOption:nth-child(${i + 3})`).removeClass("hover");
+app.removeHoverClass = function (i, category) {
+  // remove any hover classes below, above, or to the side
+  $(`.${category}CategoryOption:nth-child(${i + 1})`).removeClass("hover");
+  $(`.${category}CategoryOption:nth-child(${i - 1})`).removeClass("hover");
+  $(`.${category}CategoryOption:nth-child(${i - 3})`).removeClass("hover");
+  $(`.${category}CategoryOption:nth-child(${i + 3})`).removeClass("hover");
 };
 
 $(function () {
