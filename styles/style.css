@@ -470,6 +470,34 @@ fieldset input {
   display: none;
 }
 
+.mealCategory .mealCategoryOption:nth-child(1),
+.mealCategory .drinkCategoryOption:nth-child(1),
+.drinkCategory .mealCategoryOption:nth-child(1),
+.drinkCategory .drinkCategoryOption:nth-child(1) {
+  border-top-left-radius: 15px;
+}
+
+.mealCategory .mealCategoryOption:nth-child(3),
+.mealCategory .drinkCategoryOption:nth-child(3),
+.drinkCategory .mealCategoryOption:nth-child(3),
+.drinkCategory .drinkCategoryOption:nth-child(3) {
+  border-top-right-radius: 15px;
+}
+
+.mealCategory .mealCategoryOption:nth-child(10),
+.mealCategory .drinkCategoryOption:nth-child(7),
+.drinkCategory .mealCategoryOption:nth-child(10),
+.drinkCategory .drinkCategoryOption:nth-child(7) {
+  border-bottom-left-radius: 15px;
+}
+
+.mealCategory .mealCategoryOption:nth-child(12),
+.mealCategory .drinkCategoryOption:nth-child(9),
+.drinkCategory .mealCategoryOption:nth-child(12),
+.drinkCategory .drinkCategoryOption:nth-child(9) {
+  border-bottom-right-radius: 15px;
+}
+
 .mealCategory {
   background-color: #eeeeee;
   position: relative;
@@ -506,22 +534,6 @@ fieldset input {
 
 .mealCategory .categoryMealWrapper .mealCategoryOption:hover {
   background-color: #950740;
-}
-
-.mealCategory .categoryMealWrapper .mealCategoryOption:nth-child(1) {
-  border-top-left-radius: 15px;
-}
-
-.mealCategory .categoryMealWrapper .mealCategoryOption:nth-child(3) {
-  border-top-right-radius: 15px;
-}
-
-.mealCategory .categoryMealWrapper .mealCategoryOption:nth-child(10) {
-  border-bottom-left-radius: 15px;
-}
-
-.mealCategory .categoryMealWrapper .mealCategoryOption:nth-child(12) {
-  border-bottom-right-radius: 15px;
 }
 
 .drinkCategory {
@@ -565,22 +577,6 @@ fieldset input {
 
 .drinkCategory .categoryDrinkWrapper .drinkCategoryOption:hover {
   background-color: #950740;
-}
-
-.drinkCategory .categoryDrinkWrapper .drinkCategoryOption:nth-child(1) {
-  border-top-left-radius: 15px;
-}
-
-.drinkCategory .categoryDrinkWrapper .drinkCategoryOption:nth-child(3) {
-  border-top-right-radius: 15px;
-}
-
-.drinkCategory .categoryDrinkWrapper .drinkCategoryOption:nth-child(7) {
-  border-bottom-left-radius: 15px;
-}
-
-.drinkCategory .categoryDrinkWrapper .drinkCategoryOption:nth-child(9) {
-  border-bottom-right-radius: 15px;
 }
 
 .resultsSection {

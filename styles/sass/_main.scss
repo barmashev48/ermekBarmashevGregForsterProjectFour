@@ -8,8 +8,29 @@ fieldset {
   input {
     display: none;
   }
+}
 
-  
+.mealCategory,
+.drinkCategory {
+  .mealCategoryOption:nth-child(1),
+  .drinkCategoryOption:nth-child(1) {
+    border-top-left-radius: 15px;
+  }
+
+  .mealCategoryOption:nth-child(3),
+  .drinkCategoryOption:nth-child(3) {
+    border-top-right-radius: 15px;
+  }
+
+  .mealCategoryOption:nth-child(10),
+  .drinkCategoryOption:nth-child(7) {
+    border-bottom-left-radius: 15px;
+  }
+
+  .mealCategoryOption:nth-child(12),
+  .drinkCategoryOption:nth-child(9) {
+    border-bottom-right-radius: 15px;
+  }
 }
 
 .mealCategory {
@@ -43,22 +64,6 @@ fieldset {
       &:hover {
         background-color: $mainAccent;
       }
-    }
-
-    .mealCategoryOption:nth-child(1) {
-      border-top-left-radius: 15px;
-    }
-
-    .mealCategoryOption:nth-child(3) {
-      border-top-right-radius: 15px;
-    }
-
-    .mealCategoryOption:nth-child(10) {
-      border-bottom-left-radius: 15px;
-    }
-
-    .mealCategoryOption:nth-child(12) {
-      border-bottom-right-radius: 15px;
     }
   }
 }
@@ -94,22 +99,6 @@ fieldset {
       &:hover {
         background-color: $mainAccent;
       }
-    }
-
-    .drinkCategoryOption:nth-child(1) {
-      border-top-left-radius: 15px;
-    }
-
-    .drinkCategoryOption:nth-child(3) {
-      border-top-right-radius: 15px;
-    }
-
-    .drinkCategoryOption:nth-child(7) {
-      border-bottom-left-radius: 15px;
-    }
-
-    .drinkCategoryOption:nth-child(9) {
-      border-bottom-right-radius: 15px;
     }
   }
 }

@@ -149,11 +149,12 @@ app.categoryChecked = function () {
   $("input:checked").parent().toggleClass("checked");
 };
 
-app.startAgain = function (e) {
+app.startAgain = function (e) { // resets the form by unchecking 
   e.preventDefault();
-  // $("#myForm").trigger("reset");
+  $(".checked").removeClass("checked");
   app.scroll($("header"));
 };
+
 //Slides the image on meal choice page
 app.showMealImage = function () {
   $(".mealImg").animate({ left: "20%" }, 1000);
@@ -182,12 +183,15 @@ app.eventListeners = function () {
     app.categoryChecked();
   });
 
+  // See start again function
   $(".startAgainButton").on("click", (e) => {
-    $("form").trigger("reset");
-    // $("radio:checked").removeAttr('checked');
     app.startAgain(e);
-  });
+  }); 
 
+  app.addHoverEffects(); // see below
+};
+
+app.addHoverEffects = function() {
   // below code is for adding hover states to input buttons
   // first for loop is for the two different inputs: meals and drinks
   for (let k = 0; k <= 1; k++) {
@@ -201,7 +205,7 @@ app.eventListeners = function () {
       for (let j = 1; j <= colHeight; j++) { // each iteration of j is a row in each column
         switch (j) {
           case 1: // this would be all of first row (j = 1)
-            $(`.${category}CategoryOption:nth-child(${i})`).hover( 
+            $(`.${category}CategoryOption:nth-child(${i})`).hover(
               function () {
                 app.addHoverClass(i, j, category);
               },
