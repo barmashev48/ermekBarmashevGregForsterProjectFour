@@ -54,7 +54,6 @@ label {
 .scrollButton,
 .submitButton {
   color: #eeeeee;
-  font-weight: bold;
   border: 2px solid #C3073F;
   font-size: 2.4rem;
   border-radius: 10px;
@@ -444,7 +443,7 @@ header .heading h1 {
 
 header .heading img {
   position: absolute;
-  right: -50px;
+  right: -40px;
   top: 0px;
   width: 100px;
 }
@@ -475,8 +474,6 @@ fieldset .categoryMealWrapper {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-  position: relative;
-  z-index: 2;
 }
 
 fieldset .categoryMealWrapper .mealCategoryOption {
@@ -522,14 +519,6 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
   position: relative;
 }
 
-.mealCategory .mealImg {
-  position: absolute;
-  left: -50%;
-  top: 10%;
-  width: 300px;
-  z-index: 1;
-}
-
 .mealCategory .scrollButton {
   background-color: #4E4E50;
 }
@@ -540,20 +529,11 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
   position: relative;
 }
 
-.drinkCategory .drinkImg {
-  position: absolute;
-  left: -50%;
-  top: 10%;
-  width: 300px;
-  z-index: 1;
-}
-
 .drinkCategory .categoryDrinkWrapper {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  z-index: 2;
 }
 
 .drinkCategory .categoryDrinkWrapper .drinkCategoryOption {
@@ -607,19 +587,6 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
           align-items: center;
 }
 
-.resultsSection .resultsWrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-  margin-top: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 90%;
-}
-
 .resultsSection .instructions {
   display: none;
 }
@@ -650,6 +617,19 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
       align-self: flex-start;
 }
 
+.resultsWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+}
+
 .mealRecipe {
   background-color: #eeeeee;
   width: 50%;
@@ -664,10 +644,6 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
   body {
     font-size: 1.6rem;
   }
-  .mealImg,
-  .drinkImg {
-    display: none;
-  }
 }
 
 @media (max-width: 600px) {
@@ -675,12 +651,12 @@ fieldset .categoryMealWrapper .mealCategoryOption:nth-child(14) {
     width: 95%;
   }
   header .headerWrapper .heading h1 {
-    font-size: 4rem;
+    font-size: 5rem;
   }
   header .headerWrapper .heading img {
     width: 80px;
-    left: 230px;
-    top: -13px;
+    left: 125px;
+    top: -10px;
   }
   fieldset .categoryDrinkWrapper,
   fieldset .categoryMealWrapper {

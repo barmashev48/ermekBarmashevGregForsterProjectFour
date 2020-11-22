@@ -1,6 +1,44 @@
 .resultsSection {
-  
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .resultsWrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .instructions {
+    display: none;
+  }
+  .showInstructions {
+    cursor: pointer;
+    border: none;
+    margin: 10px 0;
+  }
+  .mealRecipe,
+  .drinkRecipe {
+    width: 48%;
+    border-radius: 20px;
+    padding: 10px 20px;
+
+    img {
+      width: 30%;
+      float: right;
+      margin: 10px 0 0 5px;
+    }
+  }
+  .drinkRecipe {
+    color: $lightBackground;
+    align-self: flex-start;
+  }
 }
+
 .mealRecipe {
   background-color: $lightBackground;
   // color: $lightBackground;

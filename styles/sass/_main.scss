@@ -12,6 +12,8 @@ fieldset {
   .categoryMealWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    position: relative;
+    z-index: 2;
 
     .mealCategoryOption {
       cursor: pointer;
@@ -30,34 +32,40 @@ fieldset {
     }
 
     .mealCategoryOption:nth-child(4) {
-      border-top-right-radius: 15px;         
+      border-top-right-radius: 15px;
     }
 
     .mealCategoryOption:nth-child(9) {
-      border-bottom-left-radius: 15px;          
+      border-bottom-left-radius: 15px;
     }
 
     .mealCategoryOption:nth-child(12) {
-      border-bottom-right-radius: 15px;          
+      border-bottom-right-radius: 15px;
     }
-  
+
     .mealCategoryOption:nth-child(13) {
       grid-column-start: 2;
     }
     .mealCategoryOption:nth-child(14) {
       grid-column-start: 3;
-    }     
+    }
   }
 }
 
 .mealCategory {
   background-color: $lightBackground;
   position: relative;
+  .mealImg {
+    position: absolute;
+    left: -50%;
+    top: 10%;
+    width: 300px;
+    z-index: 1;
+  }
 
   .scrollButton {
     background-color: $textOnDark;
   }
-
 }
 
 .drinkCategory {
@@ -65,24 +73,32 @@ fieldset {
   color: white;
   position: relative;
 
+  .drinkImg {
+    position: absolute;
+    left: -50%;
+    top: 10%;
+    width: 300px;
+    z-index: 1;
+  }
+
   .categoryDrinkWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    z-index: 2;
 
     .drinkCategoryOption {
       display: flex;
       justify-content: center;
       align-items: center;
-        cursor: pointer;
-        text-transform: uppercase;
-        text-align: center;
-        background-color: $lightBackground;
-        color: $darkBackground;
-        
+      cursor: pointer;
+      text-transform: uppercase;
+      text-align: center;
+      background-color: $lightBackground;
+      color: $darkBackground;
 
-        &:hover {
-          background-color: $mainAccent;
-        }
+      &:hover {
+        background-color: $mainAccent;
+      }
     }
 
     .drinkCategoryOption:nth-child(1) {
@@ -90,58 +106,15 @@ fieldset {
     }
 
     .drinkCategoryOption:nth-child(3) {
-      border-top-right-radius: 15px;         
+      border-top-right-radius: 15px;
     }
 
     .drinkCategoryOption:nth-child(7) {
-      border-bottom-left-radius: 15px;          
+      border-bottom-left-radius: 15px;
     }
 
     .drinkCategoryOption:nth-child(9) {
-      border-bottom-right-radius: 15px;          
+      border-bottom-right-radius: 15px;
     }
   }
 }
-
-.resultsSection {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .instructions {
-    display: none;
-  }
-  .showInstructions {
-    cursor: pointer;
-    border: none;
-    margin: 10px 0;
-  }
-  .mealRecipe,
-  .drinkRecipe {
-    width: 48%;
-    border-radius: 20px;
-    padding: 10px 20px;
-
-    img {
-      width: 30%;
-      float: right;
-      margin: 10px 0 0 5px;
-    };
-  }
-  .drinkRecipe {
-    color: $lightBackground;
-    align-self: flex-start;
-  }
-}
-
-.resultsWrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-  margin-top: 80px;
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-}
-
-

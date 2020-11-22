@@ -49,15 +49,19 @@ app.searchRecipe = function (url, name, type) {
       s: name,
     },
   }).then(function (res) {
-    // console.log(res[type][0][`strIngredient${1}`]); 
+    // console.log(res[type][0][`strIngredient${1}`]);
     // console.log(res);
     let ingredients = [];
     for (let i = 1; i <= 20; i++) {
-      if (res[type][0][`strIngredient${i}`] !== null && res[type][0][`strIngredient${i}`] !== "" && res[type][0][`strIngredient${i}`]) {
+      if (
+        res[type][0][`strIngredient${i}`] !== null &&
+        res[type][0][`strIngredient${i}`] !== "" &&
+        res[type][0][`strIngredient${i}`]
+      ) {
         ingredients.push(res[type][0][`strIngredient${i}`]);
       }
     }
-    console.log('this is the array');
+    console.log("this is the array");
     console.log(ingredients);
     type === "meals"
       ? app.displayMeal(res[type][0], ingredients)
@@ -66,14 +70,10 @@ app.searchRecipe = function (url, name, type) {
 };
 
 //Display meal recipe on the page
-app.displayMeal = function ({
-  strMeal,
-  strCategory,
-  strArea,
-  strInstructions,
-  strMealThumb,
-  strYoutube,
-}, ingredients) {
+app.displayMeal = function (
+  { strMeal, strCategory, strArea, strInstructions, strMealThumb, strYoutube },
+  ingredients
+) {
   const mealRecipeHtml = `
     <div class="displayedRecipe">
       <h2>${strMeal}</h2>
@@ -93,29 +93,28 @@ app.displayMeal = function ({
     </div>
   `;
   $(".mealRecipe").html(mealRecipeHtml);
-  ingredients.forEach(item => {
-    let displayIngredient = `<li>${item}</li>`
+  ingredients.forEach((item) => {
+    let displayIngredient = `<li>${item}</li>`;
     $(".mealRecipe ul").append(displayIngredient);
-  })
-  $('.showInstructions').on('click', () => {
-    if ($('.instructionArrow i').attr('class') === 'fas fa-chevron-right') {
-      $('.instructions').slideDown();
-      $('.instructionArrow i').attr('class', 'fas fa-chevron-down');
-    } else if ($('.instructionArrow i').attr('class') === 'fas fa-chevron-down') {
-      $('.instructions').slideUp();
-      $('.instructionArrow i').attr('class', 'fas fa-chevron-right');
+  });
+  $(".showInstructions").on("click", () => {
+    if ($(".instructionArrow i").attr("class") === "fas fa-chevron-right") {
+      $(".instructions").slideDown();
+      $(".instructionArrow i").attr("class", "fas fa-chevron-down");
+    } else if (
+      $(".instructionArrow i").attr("class") === "fas fa-chevron-down"
+    ) {
+      $(".instructions").slideUp();
+      $(".instructionArrow i").attr("class", "fas fa-chevron-right");
     }
-  })
+  });
 };
 
 //Display drink recipe on the page
-app.displayDrink = function ({
-  strDrink,
-  strAlcoholic,
-  strCategory,
-  strInstructions,
-  strDrinkThumb
-}, ingredients) {
+app.displayDrink = function (
+  { strDrink, strAlcoholic, strCategory, strInstructions, strDrinkThumb },
+  ingredients
+) {
   const drinkRecipeHtml = `
     <div class="displayedRecipe">
       <h2>${strDrink}</h2>
@@ -129,10 +128,10 @@ app.displayDrink = function ({
     </div>
   `;
   $(".drinkRecipe").html(drinkRecipeHtml);
-  ingredients.forEach(item => {
-    let displayIngredient = `<li>${item}</li>`
+  ingredients.forEach((item) => {
+    let displayIngredient = `<li>${item}</li>`;
     $(".drinkRecipe ul").append(displayIngredient);
-  })
+  });
 };
 
 //Get random number from 0 to arrayLength parameter
@@ -156,11 +155,19 @@ app.categoryChecked = function () {
   $("input:checked").parent().toggleClass("checked");
 };
 
-app.startAgain = function(e){
+app.startAgain = function (e) {
   e.preventDefault();
-  $('form').trigger("reset");
+  $("form").trigger("reset");
   app.scroll($("header"));
-}
+};
+//Slides the image on meal choice page
+app.showMealImage = function () {
+  $(".mealImg").animate({ left: "20%" }, 1000);
+};
+
+app.showDrinkImage = function () {
+  $(".drinkImg").animate({ left: "20%" }, 1000);
+};
 
 // All event listeners
 app.eventListeners = function () {
@@ -168,18 +175,22 @@ app.eventListeners = function () {
   $(".goToMeal").on("click", (e) => {
     e.preventDefault();
     app.scroll($(".mealCategory"));
+    app.showMealImage();
   });
 
   $(".goToDrinks").on("click", (e) => {
     e.preventDefault();
     app.scroll($(".drinkCategory"));
+    app.showDrinkImage();
   });
 
   $("form").on("change", () => {
     app.categoryChecked();
   });
 
-  $(".startAgainButton").on('click', (e) => { app.startAgain(e) });
+  $(".startAgainButton").on("click", (e) => {
+    app.startAgain(e);
+  });
 
   for (let i = 1; i <= 4; i++) {
     for (let j = 1; j <= 3; j++) {

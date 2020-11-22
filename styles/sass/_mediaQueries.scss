@@ -2,6 +2,11 @@
   body {
     font-size: 1.6rem;
   }
+
+  .mealImg,
+  .drinkImg {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
@@ -13,13 +18,13 @@
   header .headerWrapper .heading  {
     
     h1 {
-      font-size: 5rem;
+      font-size: 4rem;
     };
 
     img {
       width: 80px;
-      left: 125px;
-      top: -10px;
+      left: 230px;
+      top: -13px;
     }
   }
 
