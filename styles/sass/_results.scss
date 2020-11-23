@@ -1,0 +1,79 @@
+.resultsSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .resultsWrapper { // Holds the two recipes 
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .showInstructionsMeal,
+  .showInstructionsDrink { // This is the button for dropping down the instructions, styled to look like regular text
+    cursor: pointer;
+    border: none;
+    margin: 10px 0;
+  }
+  .instructionsMeal,
+  .instructionsDrink { // Display none until the aforementioned button is clicked
+    display: none;
+  }
+  .showInstructionsDrink {
+    background-color: $main;
+    color: $lightBackground;
+  }
+  .mealRecipe,
+  .drinkRecipe { // The two recipe containers
+    width: 48%;
+    border-radius: 20px;
+    padding: 20px 20px;
+
+    img {
+      width: 40%;
+      float: right; // LOL
+      margin: 10px 5px 0 0;
+      border-radius: 5px;
+    }
+    p {
+      margin-bottom: 10px;
+    }
+  }
+  .mealRecipe img {
+    box-shadow: 10px -20px $main;
+  }
+  .drinkRecipe img {
+    box-shadow: 10px -20px $textOnDark;
+  }
+  .drinkRecipe {
+    color: $lightBackground;
+    align-self: flex-start;
+  }
+}
+
+// Modifying the <li>s dot styles with the help of this resource: https://www.w3schools.com/howto/howto_css_bullet_color.asp
+ul {
+  list-style: none;
+
+  li::before {
+    content: "\2022";  // That's the unicode value for a bullet
+    font-weight: bold; 
+    width: 10px; 
+    margin-right: 5px;
+  }
+}
+
+
+// Side by side
+.mealRecipe,
+.drinkRecipe {
+  width: 50%;
+  margin-top: 85px;
+}
+.mealRecipe {
+  background-color: $lightBackground;
+}
+.drinkRecipe {
+  background-color: $main;
+}

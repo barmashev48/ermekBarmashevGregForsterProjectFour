@@ -1,0 +1,50 @@
+@media (max-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+  a {
+    font-size: 2rem;
+  }
+
+  .mealImg,
+  .drinkImg {
+    display: none;
+  }
+  .resultsSection {
+    .goBack {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  header .headerWrapper {
+    width: 95%;
+  }
+
+  header .headerWrapper .heading  {
+    h1 {
+      font-size: 4rem;
+    }
+    img {
+      width: 80px;
+      left: 230px;
+      top: -13px;
+    }
+  }
+
+  .resultsWrapper {
+    flex-direction: column;
+
+      .mealRecipe,
+      .drinkRecipe {
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .mealRecipe img,
+      .drinkRecipe img {
+          width: 45%;
+      }
+  }
+}

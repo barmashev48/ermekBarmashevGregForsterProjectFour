@@ -1,0 +1,92 @@
+// General styles
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1.4;
+  font-size: 2rem;
+}
+header,
+section {
+  min-height: 100vh;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+fieldset {
+  border: 0;
+}
+h2 {
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+}
+
+.mealCategoryWrapper,
+.drinkCategoryWrapper,
+.resultsWrapper {
+  width: 90%;
+  max-width: 1400px;
+  position: relative; // Used for the go back button
+}
+
+.scrollButton,
+.submitButton {
+  color: $lightBackground;
+  font-weight: bold;
+  font-size: 2.4rem;
+  border: 2px solid $accentAccent;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin: 30px auto;
+  background: linear-gradient(
+    to right,
+    $accentAccent 50%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.7s ease-in;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    background-position: left bottom;
+  }
+}
+
+.resultsSection .goBack{
+  color: $darkBackground;
+}
+
+// Circular go back button
+.goBack {
+  position: absolute;
+  left: 0;
+  top: -20px;
+  border-radius: 50%;
+  height: 65px;
+  width: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid $accentAccent;
+
+  img {
+    width: 40px;
+    height: 40px;
+    color: $lightBackground;
+  }
+}
+
+// "TRY AGAIN" at the bottom
+.startAgainButton {
+  color: $darkBackground;
+}
+
