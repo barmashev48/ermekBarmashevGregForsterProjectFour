@@ -5,12 +5,9 @@
   align-items: center;
 
   .resultsWrapper {
-    max-width: 1400px;
     margin: 0 auto;
-    margin-top: 80px;
     display: flex;
     justify-content: space-between;
-    width: 90%;
   }
 
   .instructionsMeal,
@@ -45,11 +42,15 @@
   }
 }
 
+// Side by side
+.mealRecipe,
+.drinkRecipe {
+  width: 50%;
+  margin-top: 85px;
+}
 .mealRecipe {
   background-color: $lightBackground;
-  width: 50%;
 }
 .drinkRecipe {
   background-color: $main;
-  width: 50%;
 }

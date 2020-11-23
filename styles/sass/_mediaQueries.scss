@@ -10,44 +10,27 @@
   .drinkImg {
     display: none;
   }
+  .resultsSection {
+    .goBack {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 600px) {
-
   header .headerWrapper {
     width: 95%;
   }
 
   header .headerWrapper .heading  {
-    
     h1 {
       font-size: 4rem;
-    };
-
+    }
     img {
       width: 80px;
       left: 230px;
       top: -13px;
     }
-  }
-
-  fieldset .categoryDrinkWrapper,
-  fieldset .categoryMealWrapper {
-    width: 95%;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  fieldset .categoryMealWrapper .mealCategoryOption:nth-child(4),
-  fieldset .categoryMealWrapper .mealCategoryOption:nth-child(9) {
-    border-radius: 0;
-  }
-
-  fieldset .categoryMealWrapper .mealCategoryOption:nth-child(3){
-    border-top-right-radius: 15px;
-  }
-
-  fieldset .categoryMealWrapper .mealCategoryOption:nth-child(10){
-    border-bottom-left-radius: 15px;
   }
 
   .resultsWrapper {
@@ -56,7 +39,7 @@
       .mealRecipe,
       .drinkRecipe {
         width: 100%;
-        margin: 10px; 
+        margin-top: 20px;
       }
 
       .mealRecipe img,

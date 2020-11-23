@@ -179,14 +179,14 @@ app.eventListeners = function () {
   $("form").on("submit", app.submitHandler);
   $(".goToMeal").on("click", (e) => {
     e.preventDefault();
-    app.scroll($(".mealCategory"));
+    app.scroll($(".mealInput"));
     app.slideImage('meal');
   });
 
   // Button to scroll to drinks
   $(".goToDrinks").on("click", (e) => {
     e.preventDefault();
-    app.scroll($(".drinkCategory"));
+    app.scroll($(".drinkInput"));
     app.slideImage('drink');
   });
 

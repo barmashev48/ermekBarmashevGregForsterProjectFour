@@ -24,10 +24,11 @@
     <main>
       <form action="" class="inputForm">
           <!-- meal category input -->
-          <fieldset class="mealCategory">
-            <img class="mealImg" src="./assets/diet.png" alt="various produce items">
-            <h2>Choose your meal category</h2>
-            <div class="categoryMealWrapper">                
+          <section class="mealInput">
+            <div class="mealCategoryWrapper">
+              <img class="mealImg" src="./assets/diet.png" alt="various produce items">
+              <h2>Choose your meal category</h2>
+              <fieldset class="mealCategoryInput">
                 <label class="mealCategoryOption" for="Beef">Beef
                   <input type="radio" name="categoryMeal" value="Beef" id="Beef" />
                 </label>
@@ -64,51 +65,54 @@
                 <label class="mealCategoryOption" for="Vegan">Vegan
                   <input type="radio" name="categoryMeal" value="Vegan" id="Vegan" />
                 </label>
+              </fieldset>
+              <a href="" class="scrollButton goToDrinks">Go to drinks</a>
             </div>
-            <a href="" class="scrollButton goToDrinks">Go to drinks</a>
-          </fieldset>
+          </section>
+          
           <!-- drink category input -->
-          <fieldset class="drinkCategory">
-            <img class="drinkImg" src="./assets/mojito.png" alt="mojito cocktail">
-            <a href="" class="scrollButton goToMeal goBack"><img src="./assets/arrow.svg" alt="go back button"></a>
-            <h2>Choose your drink category</h2>
-            <div class="categoryDrinkWrapper">
-              <label class="drinkCategoryOption" for="Cocktail">Cocktail
+          <section class="drinkInput">
+            <div class="drinkCategoryWrapper">
+              <img class="drinkImg" src="./assets/mojito.png" alt="mojito cocktail">
+              <a href="" class="scrollButton goToMeal goBack"><img src="./assets/arrow.svg" alt="go back button"></a>
+              <h2>Choose your drink category</h2>
+              <fieldset class="drinkCategoryInput">
+                <label class="drinkCategoryOption" for="Cocktail">Cocktail
                   <input type="radio" name="categoryDrink" value="Cocktail" id="Cocktail" />
-              </label>
-              <label class="drinkCategoryOption" for="HomemadeLiquer">Homemade Liquer
+                </label>
+                <label class="drinkCategoryOption" for="HomemadeLiquer">Homemade Liquer
                   <input type="radio" name="categoryDrink" value="Homemade Liqueur" id="HomemadeLiquer" />
-              </label>
-              <label class="drinkCategoryOption" for="FloatShake">Float / Shake
+                </label>
+                <label class="drinkCategoryOption" for="FloatShake">Float / Shake
                   <input type="radio" name="categoryDrink" value="Milk / Float / Shake" id="FloatShake" />
-              </label>
-              <label class="drinkCategoryOption" for="Cocoa">Cocoa
+                </label>
+                <label class="drinkCategoryOption" for="Cocoa">Cocoa
                   <input type="radio" name="categoryDrink" value="Cocoa" id="Cocoa" />
-              </label>
-              <label class="drinkCategoryOption" for="Shot">Shot
+                </label>
+                <label class="drinkCategoryOption" for="Shot">Shot
                   <input type="radio" name="categoryDrink" value="Shot" id="Shot" />
-              </label>
-              <label class="drinkCategoryOption" for="CoffeeTea">Coffee / Tea
+                </label>
+                <label class="drinkCategoryOption" for="CoffeeTea">Coffee / Tea
                   <input type="radio" name="categoryDrink" value="Coffee / Tea" id="CoffeeTea" />
-              </label>
-              <label class="drinkCategoryOption" for="PartyDrink">Party Drink
+                </label>
+                <label class="drinkCategoryOption" for="PartyDrink">Party Drink
                   <input type="radio" name="categoryDrink" value="Punch / Party Drink" id="PartyDrink" />
-              </label>
-              <label class="drinkCategoryOption" for="Beer">Beer
+                </label>
+                <label class="drinkCategoryOption" for="Beer">Beer
                   <input type="radio" name="categoryDrink" value="Beer" id="Beer" />
-              </label>
-              <label class="drinkCategoryOption" for="Soda">Soda
+                </label>
+                <label class="drinkCategoryOption" for="Soda">Soda
                   <input type="radio" name="categoryDrink" value="Soft Drink / Soda" id="Soda" />
-              </label>
+                </label>
+              </fieldset>
+              <button class="submitButton" type="submit">Submit</button>
             </div>
-            <button class="submitButton" type="submit">Submit</button>
-          </fieldset>
-        </div>
+          </section>
       </form>
       <!-- results output -->
       <section class="resultsSection">
-        <a href="" class="scrollButton goToDrinks goBack"><img src="./assets/blackArrow.svg" alt="go back button"></a>
         <div class="resultsWrapper">
+          <a href="" class="scrollButton goToDrinks goBack"><img src="./assets/blackArrow.svg" alt="go back button"></a>
           <div class="mealRecipe"></div>
           <div class="drinkRecipe"></div>
         </div>
