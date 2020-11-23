@@ -477,6 +477,7 @@ header .description {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 2;
 }
 
 .mealInput .mealCategoryOption:nth-child(1),
@@ -515,6 +516,7 @@ header .description {
   left: -100%;
   top: 5%;
   width: 200px;
+  z-index: -1;
 }
 
 .mealInput {

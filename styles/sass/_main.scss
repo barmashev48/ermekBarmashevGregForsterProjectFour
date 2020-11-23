@@ -30,6 +30,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 // General styles for both meal and drink categories
@@ -63,6 +64,7 @@
     left: -100%;
     top: 5%;
     width: 200px;
+    z-index: -1;
   }
 }
 

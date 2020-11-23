@@ -12,7 +12,6 @@ app.drinkSearchUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php";
 app.submitHandler = function (e) {
   e.preventDefault();
   app.scroll($(".resultsSection"));
-  // find values
   const categoryMeal = $("input[name=categoryMeal]:checked").val();
   const categoryDrink = $("input[name=categoryDrink]:checked").val();
 
@@ -107,10 +106,8 @@ app.displayMeal = function (
 };
 
 //Display drink recipe on the page
-app.displayDrink = function (
-  { strDrink, strAlcoholic, strCategory, strInstructions, strDrinkThumb },
-  ingredients
-  ){
+app.displayDrink = function ({ strDrink, strAlcoholic, strCategory, strInstructions, strDrinkThumb },
+  ingredients) {
   const drinkRecipeHtml = `
     <div class="displayedRecipe">
       <h2>${strDrink}</h2>
@@ -171,7 +168,7 @@ app.startAgain = function (e) {
 app.slideImage = function (category) {
   category === 'meal'
     ? $(`.${category}Img`).animate({ left: "5%" }, 1000)
-    : $(`.${category}Img`).animate({ left: "95%" }, 1000)
+    : $(`.${category}Img`).animate({ left: "80%" }, 1000)
 }
 
 // All event listeners
