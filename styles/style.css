@@ -24,11 +24,6 @@ img {
   display: block;
 }
 
-a {
-  font-size: 2rem;
-  text-decoration: none;
-}
-
 fieldset {
   border: 0;
 }
@@ -38,25 +33,12 @@ h2 {
   text-transform: uppercase;
 }
 
-.instructions {
-  margin: 10px 0;
-}
-
-label {
-  cursor: pointer;
-  padding: 20px 10px;
-}
-
-.checked {
-  background-color: #950740 !important;
-}
-
 .scrollButton,
 .submitButton {
   color: #eeeeee;
   font-weight: bold;
-  border: 2px solid #C3073F;
   font-size: 2.4rem;
+  border: 2px solid #C3073F;
   border-radius: 10px;
   padding: 5px 20px;
   margin: 30px auto;
@@ -67,6 +49,7 @@ label {
   -webkit-transition: all 0.7s ease-in;
   transition: all 0.7s ease-in;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .scrollButton:hover,
@@ -75,14 +58,13 @@ label {
 }
 
 .resultsSection .goBack {
-  top: -20px;
   color: #1A1A1D;
 }
 
 .goBack {
   position: absolute;
-  left: 20px;
-  top: 10px;
+  left: 10px;
+  top: -20px;
   border-radius: 50%;
   height: 65px;
   width: 65px;
@@ -397,10 +379,6 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -425,10 +403,6 @@ header .headerWrapper {
           align-items: center;
 }
 
-header p {
-  margin: 20px 0;
-}
-
 header .heading {
   position: relative;
   width: 100%;
@@ -449,6 +423,10 @@ header .heading img {
   width: 100px;
 }
 
+header .description {
+  margin: 20px 0;
+}
+
 fieldset {
   height: 100vh;
   display: -webkit-box;
@@ -467,7 +445,15 @@ fieldset {
 }
 
 fieldset input {
-  display: none;
+  opacity: 0;
+  position: absolute;
+}
+
+fieldset label {
+  cursor: pointer;
+  padding: 20px 10px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .mealCategory .mealCategoryOption:nth-child(1),
@@ -498,41 +484,46 @@ fieldset input {
   border-bottom-right-radius: 15px;
 }
 
+.mealCategory .mealImg,
+.mealCategory .drinkImg,
+.drinkCategory .mealImg,
+.drinkCategory .drinkImg {
+  position: absolute;
+  right: -50%;
+  top: 5%;
+  width: 200px;
+}
+
+.mealCategory .mealImg,
+.drinkCategory .mealImg {
+  left: -50%;
+}
+
+.mealCategory .categoryMealWrapper,
+.mealCategory .categoryDrinkWrapper,
+.drinkCategory .categoryMealWrapper,
+.drinkCategory .categoryDrinkWrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
 .mealCategory {
   background-color: #eeeeee;
   position: relative;
-}
-
-.mealCategory .mealImg {
-  position: absolute;
-  left: -50%;
-  top: 10%;
-  width: 300px;
-  z-index: 1;
 }
 
 .mealCategory .scrollButton {
   background-color: #4E4E50;
 }
 
-.mealCategory .categoryMealWrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  position: relative;
-  z-index: 2;
-}
-
-.mealCategory .categoryMealWrapper .mealCategoryOption {
-  cursor: pointer;
-  text-transform: uppercase;
-  text-align: center;
+.mealCategory .mealCategoryOption {
   background-color: #4E4E50;
   color: white;
 }
 
-.mealCategory .categoryMealWrapper .mealCategoryOption:hover {
+.mealCategory .mealCategoryOption:hover {
   background-color: #950740;
 }
 
@@ -542,23 +533,7 @@ fieldset input {
   position: relative;
 }
 
-.drinkCategory .drinkImg {
-  position: absolute;
-  left: -50%;
-  top: 10%;
-  width: 300px;
-  z-index: 1;
-}
-
-.drinkCategory .categoryDrinkWrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  z-index: 2;
-}
-
-.drinkCategory .categoryDrinkWrapper .drinkCategoryOption {
+.drinkCategory .drinkCategoryOption {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -568,14 +543,16 @@ fieldset input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  text-align: center;
   background-color: #eeeeee;
   color: #1A1A1D;
 }
 
-.drinkCategory .categoryDrinkWrapper .drinkCategoryOption:hover {
+.drinkCategory .drinkCategoryOption:hover {
+  background-color: #950740;
+}
+
+.mealCategory .checked,
+.drinkCategory .checked {
   background-color: #950740;
 }
 
@@ -606,14 +583,21 @@ fieldset input {
   width: 90%;
 }
 
-.resultsSection .instructions {
+.resultsSection .instructionsMeal,
+.resultsSection .instructionsDrink {
   display: none;
 }
 
-.resultsSection .showInstructions {
+.resultsSection .showInstructionsMeal,
+.resultsSection .showInstructionsDrink {
   cursor: pointer;
   border: none;
   margin: 10px 0;
+}
+
+.resultsSection .showInstructionsDrink {
+  background-color: #6F2232;
+  color: #eeeeee;
 }
 
 .resultsSection .mealRecipe,
@@ -649,6 +633,9 @@ fieldset input {
 @media (max-width: 768px) {
   body {
     font-size: 1.6rem;
+  }
+  a {
+    font-size: 2rem;
   }
   .mealImg,
   .drinkImg {

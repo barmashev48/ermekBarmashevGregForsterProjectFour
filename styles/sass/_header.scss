@@ -1,44 +1,39 @@
-header {
-    height: 100vh;
+header { // display: flex is used to center the .headerWrapper
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $darkBackground;
+  color: white;
+
+  .headerWrapper { // title, description, and "go to app" are within this
+    width: 500px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background-color: $darkBackground;
-    color: white;
+  }
 
-    .headerWrapper {
-        width: 500px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  .heading { // heading contains the title with the image of blueberries
+    position: relative;
+    width: 100%;
+
+    h1 {
+      margin: 0 0 20px 0;
+      text-align: left;
+      color: $accentAccent;
+      font-size: 8rem;
+      line-height: 1.2; 
     }
-
-    p {
-        margin: 20px 0; 
-    };
-
-
-    .heading {
-        position: relative;
-        width: 100%;
-        h1 {
-            margin: 0 0 20px 0;
-            text-align: left;
-            color: $accentAccent;
-            font-size: 8rem;
-            line-height: 1.2; 
-        }
-
-
-
     img {
-        position: absolute;
-        right: -50px;
-        top: 0px;
-        width: 100px;
+      position: absolute;
+      right: -50px;
+      top: 0px;
+      width: 100px;
     }
+  }
 
-    }
+  .description { // description p tag
+    margin: 20px 0; 
+  }
 }

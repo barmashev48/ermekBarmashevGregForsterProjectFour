@@ -1,3 +1,4 @@
+// General styles
 * {
   margin: 0;
   padding: 0;
@@ -19,37 +20,20 @@ img {
   height: auto;
   display: block;
 }
-a {
-  font-size: 2rem;
-  text-decoration: none;
-}
 fieldset {
   border: 0;
 }
-
 h2 {
   margin: 0 0 10px 0;
   text-transform: uppercase;
-}
-
-.instructions {
-  margin: 10px 0;
-}
-label {
-  cursor: pointer;
-  padding: 20px 10px;
-}
-
-.checked {
-  background-color: $mainAccent !important; 
 }
 
 .scrollButton,
 .submitButton {
   color: $lightBackground;
   font-weight: bold;
-  border: 2px solid $accentAccent;
   font-size: 2.4rem;
+  border: 2px solid $accentAccent;
   border-radius: 10px;
   padding: 5px 20px;
   margin: 30px auto;
@@ -62,6 +46,7 @@ label {
   background-position: right bottom;
   transition: all 0.7s ease-in;
   text-transform: uppercase;
+  text-decoration: none;
 
   &:hover {
     background-position: left bottom;
@@ -69,14 +54,14 @@ label {
 }
 
 .resultsSection .goBack{
-  top: -20px;
+  // top: -20px;
   color: $darkBackground;
 }
 
 .goBack {
   position: absolute;
-  left: 20px;
-  top: 10px;
+  left: 10px;
+  top: -20px;
   border-radius: 50%;
   height: 65px;
   width: 65px;
@@ -84,8 +69,6 @@ label {
   justify-content: center;
   align-items: center;
   border: 3px solid $accentAccent;
-
-  
 
   img {
     width: 40px;
@@ -103,8 +86,6 @@ label {
   color: $darkBackground;
   cursor: pointer;
 }
-
-
 
 .hover {
   opacity: 0.9 !important;

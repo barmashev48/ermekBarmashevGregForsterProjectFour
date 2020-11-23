@@ -13,13 +13,19 @@
     width: 90%;
   }
 
-  .instructions {
+  .instructionsMeal,
+  .instructionsDrink {
     display: none;
   }
-  .showInstructions {
+  .showInstructionsMeal,
+  .showInstructionsDrink {
     cursor: pointer;
     border: none;
     margin: 10px 0;
+  }
+  .showInstructionsDrink {
+    background-color: $main;
+    color: $lightBackground;
   }
   .mealRecipe,
   .drinkRecipe {
@@ -41,7 +47,6 @@
 
 .mealRecipe {
   background-color: $lightBackground;
-  // color: $lightBackground;
   width: 50%;
 }
 .drinkRecipe {

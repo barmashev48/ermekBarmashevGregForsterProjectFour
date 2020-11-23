@@ -5,15 +5,26 @@ fieldset {
   justify-content: center;
   align-items: center;
 
-  input {
-    display: none;
+  // Change the radio buttons so that they're tabbable, can't see them, and take no footprint
+  input { 
+    opacity: 0;
+    position: absolute;
+  }
+  // General styles for the labels (they contain the category names)
+  label { 
+    cursor: pointer;
+    padding: 20px 10px;
+    text-transform: uppercase;
+    text-align: center;
   }
 }
 
+// General styles for both meal and drink categories
 .mealCategory,
-.drinkCategory {
+.drinkCategory { 
+  // Add border radius to corners of input fieldsets
   .mealCategoryOption:nth-child(1),
-  .drinkCategoryOption:nth-child(1) {
+  .drinkCategoryOption:nth-child(1) { 
     border-top-left-radius: 15px;
   }
 
@@ -31,74 +42,69 @@ fieldset {
   .drinkCategoryOption:nth-child(9) {
     border-bottom-right-radius: 15px;
   }
+
+  // Default styles for the images that slide in
+  .mealImg,
+  .drinkImg {
+    position: absolute;
+    right: -50%;
+    top: 5%;
+    width: 200px;
+  }
+  .mealImg {
+    left: -50%;
+  }
+
+  // Display grid for both the input forms
+  .categoryMealWrapper,
+  .categoryDrinkWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
+// Meal category specific styles
 .mealCategory {
   background-color: $lightBackground;
   position: relative;
-  .mealImg {
-    position: absolute;
-    left: -50%;
-    top: 10%;
-    width: 300px;
-    z-index: 1;
-  }
 
   .scrollButton {
     background-color: $textOnDark;
   }
 
-  .categoryMealWrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    position: relative;
-    z-index: 2;
+  .mealCategoryOption {
+    background-color: $textOnDark;
+    color: white;
 
-    .mealCategoryOption {
-      cursor: pointer;
-      text-transform: uppercase;
-      text-align: center;
-      background-color: $textOnDark;
-      color: white;
-
-      &:hover {
-        background-color: $mainAccent;
-      }
+    &:hover {
+      background-color: $mainAccent;
     }
   }
 }
 
+// Drink category specific styles
 .drinkCategory {
   background-color: $darkBackground;
   color: white;
   position: relative;
 
-  .drinkImg {
-    position: absolute;
-    left: -50%;
-    top: 10%;
-    width: 300px;
-    z-index: 1;
-  }
+  .drinkCategoryOption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $lightBackground;
+    color: $darkBackground;
 
-  .categoryDrinkWrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    z-index: 2;
-
-    .drinkCategoryOption {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      text-transform: uppercase;
-      text-align: center;
-      background-color: $lightBackground;
-      color: $darkBackground;
-
-      &:hover {
-        background-color: $mainAccent;
-      }
+    &:hover {
+      background-color: $mainAccent;
     }
+  }
+}
+
+// At bottom for cascading purposes
+.mealCategory,
+.drinkCategory { 
+  .checked { // Display when input is selected  
+    background-color: $mainAccent; 
   }
 }
