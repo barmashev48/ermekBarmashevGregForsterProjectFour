@@ -603,16 +603,16 @@ header .description {
           justify-content: space-between;
 }
 
-.resultsSection .instructionsMeal,
-.resultsSection .instructionsDrink {
-  display: none;
-}
-
 .resultsSection .showInstructionsMeal,
 .resultsSection .showInstructionsDrink {
   cursor: pointer;
   border: none;
   margin: 10px 0;
+}
+
+.resultsSection .instructionsMeal,
+.resultsSection .instructionsDrink {
+  display: none;
 }
 
 .resultsSection .showInstructionsDrink {
@@ -624,20 +624,47 @@ header .description {
 .resultsSection .drinkRecipe {
   width: 48%;
   border-radius: 20px;
-  padding: 10px 20px;
+  padding: 20px 20px;
 }
 
 .resultsSection .mealRecipe img,
 .resultsSection .drinkRecipe img {
-  width: 30%;
+  width: 40%;
   float: right;
-  margin: 10px 0 0 5px;
+  margin: 10px 5px 0 0;
+  border-radius: 5px;
+}
+
+.resultsSection .mealRecipe p,
+.resultsSection .drinkRecipe p {
+  margin-bottom: 10px;
+}
+
+.resultsSection .mealRecipe img {
+  -webkit-box-shadow: 10px -20px #6F2232;
+          box-shadow: 10px -20px #6F2232;
+}
+
+.resultsSection .drinkRecipe img {
+  -webkit-box-shadow: 10px -20px #4E4E50;
+          box-shadow: 10px -20px #4E4E50;
 }
 
 .resultsSection .drinkRecipe {
   color: #eeeeee;
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  font-weight: bold;
+  width: 10px;
+  margin-right: 5px;
 }
 
 .mealRecipe,
