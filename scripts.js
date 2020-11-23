@@ -171,7 +171,7 @@ app.startAgain = function (e) {
 app.slideImage = function (category) {
   category === 'meal'
     ? $(`.${category}Img`).animate({ left: "5%" }, 1000)
-    : $(`.${category}Img`).animate({ right: "5%" }, 1000)
+    : $(`.${category}Img`).animate({ left: "95%" }, 1000)
 }
 
 // All event listeners
@@ -180,14 +180,14 @@ app.eventListeners = function () {
   $(".goToMeal").on("click", (e) => {
     e.preventDefault();
     app.scroll($(".mealInput"));
-    app.slideImage('meal');
+    app.slideImage("meal");
   });
 
   // Button to scroll to drinks
   $(".goToDrinks").on("click", (e) => {
     e.preventDefault();
     app.scroll($(".drinkInput"));
-    app.slideImage('drink');
+    app.slideImage("drink");
   });
 
   // Used to visually style inputs
