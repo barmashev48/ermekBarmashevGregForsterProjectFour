@@ -60,12 +60,9 @@
   .mealImg,
   .drinkImg {
     position: absolute;
-    right: -100%;
+    left: -100%;
     top: 5%;
     width: 200px;
-  }
-  .mealImg {
-    left: -100%;
   }
 }
 

@@ -512,14 +512,9 @@ header .description {
 .drinkInput .mealImg,
 .drinkInput .drinkImg {
   position: absolute;
-  right: -100%;
+  left: -100%;
   top: 5%;
   width: 200px;
-}
-
-.mealInput .mealImg,
-.drinkInput .mealImg {
-  left: -100%;
 }
 
 .mealInput {
