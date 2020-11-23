@@ -1,0 +1,13 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $darkBackground;
+  color: white;
+  font-size: 2rem;
+  height: 40px;
+
+  @media(max-width: 480px) {
+    font-size: 1.6rem;
+  }
+}

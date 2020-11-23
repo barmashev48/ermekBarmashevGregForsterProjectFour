@@ -720,3 +720,25 @@ ul li::before {
     width: 45%;
   }
 }
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #1A1A1D;
+  color: white;
+  font-size: 2rem;
+  height: 40px;
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 1.6rem;
+  }
+}
